@@ -1,0 +1,22 @@
+.footer {
+  width: 100%;
+  height: 150px;
+  display: flex;
+}
+
+.signing {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans Condensed";
+}
+
+.github-link {
+  text-decoration: underline;
+}
+
+.github-link:hover {
+  color: #ee605f;
+}
