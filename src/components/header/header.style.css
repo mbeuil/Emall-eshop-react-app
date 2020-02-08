@@ -25,6 +25,12 @@
   align-items: center;
   justify-content: flex-end;
 }
+
 .header .options .option {
   padding: 10px 15px;
+}
+
+.header .options .option:hover {
+  padding: 10px 25px;
+  color: #ee605f;
 }
