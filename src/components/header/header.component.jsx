@@ -5,6 +5,10 @@ import { auth } from '../../firebase/firebase.utils';
 
 import './header.style.css';
 
+const signOutEvent = () => {
+  auth.signOut();
+};
+
 const Header = ({ currentUser }) => {
   return (
     <div className="header">
@@ -19,7 +23,13 @@ const Header = ({ currentUser }) => {
           CONTACT
         </Link>
         {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+          <div
+            className="option"
+            onClick={signOutEvent}
+            onKeyDown={signOutEvent}
+            role="button"
+            tabIndex={0}
+          >
             SIGN OUT
           </div>
         ) : (
