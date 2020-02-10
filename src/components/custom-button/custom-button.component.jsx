@@ -1,10 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import "./custom-button.style.css";
+import './custom-button.style.css';
 
-const CustomButton = ({ children, ...otherProps }) => {
+const CustomButton = ({ children, type, ...otherProps }) => {
+  console.log(otherProps);
   return (
-    <button className="custom-button" {...otherProps}>
+    <button className="custom-button" type={type} {...otherProps}>
       {children.toUpperCase()}
     </button>
   );

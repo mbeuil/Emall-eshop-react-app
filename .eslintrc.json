@@ -3,6 +3,24 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+
+    "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true }],
+    "no-restricted-syntax": ["error", "ForInStatement", "LabeledStatement", "WithStatement"],
+    "no-async-promise-executor": "off",
+
+    "jsx-a11y/accessible-emoji": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/namespace": ["error", { "allowComputed": true }],
+    "import/prefer-default-export": "off",
+    "import/no-cycle": "off",
+
+    "react/prop-types": "off",
+    "react/state-in-constructor": ["error", "always"],
+    "react/static-property-placement": ["error", "static public field"],
+    "react/jsx-props-no-spreading": "off"
   }
 }

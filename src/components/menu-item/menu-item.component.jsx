@@ -1,12 +1,15 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-import "./menu-item.style.css";
+import './menu-item.style.css';
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+  // eslint-disable-next-line jsx-a11y/click-events-have-key-events
   <div
     className={`${size} menu-item`}
     onClick={() => history.push(`${match.url}${linkUrl}`)}
+    role="button"
+    tabIndex={0}
   >
     <div
       className="background-image"
