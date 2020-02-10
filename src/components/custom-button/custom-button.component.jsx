@@ -2,9 +2,9 @@ import React from 'react';
 
 import './custom-button.style.css';
 
-const CustomButton = ({ children, type, ...otherProps }) => {
+const CustomButton = ({ children, isGoogleSignIn, ...otherProps }) => {
   return (
-    <button className="custom-button" type={type} {...otherProps}>
+    <button className={`${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`} {...otherProps}>
       {children.toUpperCase()}
     </button>
   );
