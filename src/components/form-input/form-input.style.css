@@ -1,6 +1,7 @@
 :root {
   --sub-color: grey;
   --main-color: black;
+  --main-red: #ee605f;
 }
 
 .group {
@@ -24,13 +25,13 @@
 
 .group .form-input:focus {
   outline: none;
-  border-color: #ee605f;
+  border-color: var(--main-red);
 }
 
 .group .form-input:focus ~ .form-input-label {
   top: -9px;
   font-size: 12px;
-  color: #ee605f;
+  color: var(--main-red);
 }
 
 .group .form-input-label {

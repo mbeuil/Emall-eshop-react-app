@@ -1,3 +1,11 @@
+:root {
+  --sub-color: grey;
+  --main-color: black;
+  --main-red: #ee605f;
+  --light-red: #f3a5a4;
+  --dark-red: #ec4948;
+}
+
 .custom-button {
   min-width: 165px;
   width: auto;
@@ -6,7 +14,7 @@
 
   padding: 0 35px 0 35px;
   font-size: 0.8em;
-  background-color: black;
+  background-color: var(--main-color);
   color: white;
   font-family: 'Open Sans Condensed';
   font-weight: bolder;
@@ -17,17 +25,17 @@
 }
 .custom-button:hover {
   background-color: white;
-  color: black;
-  border: 1px solid black;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
 }
 
 .custom-button.google-sign-in {
-  background-color: #ee605f;
+  background-color: var(--main-red);
   color: white;
 }
 
 .custom-button.google-sign-in:hover {
-  background-color: #f3a5a4;
-  color: #ec4948;
+  background-color: var(--light-red);
+  color: var(--dark-red);
   border: none;
 }
