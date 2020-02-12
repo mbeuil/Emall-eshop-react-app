@@ -21,7 +21,8 @@ const Register = () => {
     }
     try {
       const { user } = await auth.createUserWithEmailAndPassword(values.email, values.password);
-      await createUserProfileDocument(user, values.displayName);
+      const { displayName } = values;
+      await createUserProfileDocument(user, { displayName });
       setValues({
         displayName: '',
         email: '',
@@ -33,7 +34,7 @@ const Register = () => {
     }
   };
 
-  const handleEvent = event => {
+  const handleChange = event => {
     const { name, value } = event.target;
 
     setValues({ ...values, [name]: value });
@@ -48,7 +49,7 @@ const Register = () => {
           type="text"
           name="displayName"
           value={values.displayName}
-          onChange={handleEvent}
+          onChange={handleChange}
           label="Display Name"
           required
         />
@@ -56,7 +57,7 @@ const Register = () => {
           type="email"
           name="email"
           value={values.email}
-          onChange={handleEvent}
+          onChange={handleChange}
           label="Email"
           required
         />
@@ -64,7 +65,7 @@ const Register = () => {
           type="password"
           name="password"
           value={values.password}
-          onChange={handleEvent}
+          onChange={handleChange}
           label="Password"
           required
         />
@@ -72,7 +73,7 @@ const Register = () => {
           type="password"
           name="confirmedPassword"
           value={values.confirmedPassword}
-          onChange={handleEvent}
+          onChange={handleChange}
           label="Confirmed Password"
           required
         />

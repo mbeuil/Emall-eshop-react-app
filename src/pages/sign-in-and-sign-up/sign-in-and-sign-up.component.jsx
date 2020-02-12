@@ -6,7 +6,7 @@ import './sign-in-and-sign-up.style.css';
 
 const SignInAndSignUpPage = () => {
   return (
-    <div className="sign-in-and-sign-up">
+    <div className="sign-in-and-register">
       <Login />
       <Register />
     </div>

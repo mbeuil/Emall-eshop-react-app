@@ -38,10 +38,13 @@ const App = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChange(setCurrentUser);
+
     return () => {
       unsubscribe();
     };
   }, []);
+
+  console.log(currentUser);
 
   return (
     <div>
