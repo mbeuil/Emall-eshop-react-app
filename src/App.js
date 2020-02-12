@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
+import SignInAndRegisterPage from './pages/sign-in-and-register/sign-in-and-register.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
-import SignInAndRegisterPage from './pages/sign-in-and-register/sign-in-and-register.component';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { setCurrentUser } from './redux/user/user.actions';
 import './App.css';
 
 /*
@@ -14,7 +17,7 @@ import './App.css';
  *
  * function that listen to auth state changes when our application mount
  * throught the useEffect hooks.
- * Get and stores the currentUser data if a user sign in.
+ * Get the currentUser data if a user sign in.
  * Set our currentUser to '' if the user sign out.
  *
  * @param: callback function
@@ -34,21 +37,18 @@ const onAuthStateChange = callback => {
 };
 
 const App = () => {
-  const [currentUser, setCurrentUser] = useState('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChange(setCurrentUser);
-
+    const unsubscribe = onAuthStateChange(user => dispatch(setCurrentUser(user)));
     return () => {
       unsubscribe();
     };
   }, []);
 
-  console.log(currentUser);
-
   return (
     <div>
-      <Header currentUser={currentUser} />
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/shop" component={ShopPage} />
