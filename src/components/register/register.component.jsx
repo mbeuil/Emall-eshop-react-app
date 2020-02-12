@@ -6,27 +6,37 @@ import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 import './register.style.css';
 
 const Register = () => {
-  const [displayName, setDisplayName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmedPassword, setConfirmedPassword] = useState('');
+  const [values, setValues] = useState({
+    displayName: '',
+    email: '',
+    password: '',
+    confirmedPassword: ''
+  });
 
   const handleSubmit = async event => {
     event.preventDefault();
-    if (password !== confirmedPassword) {
+    if (values.password !== values.confirmedPassword) {
       alert("passwords don't match");
       return;
     }
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      await createUserProfileDocument(user, displayName);
-      setDisplayName('');
-      setEmail('');
-      setPassword('');
-      setConfirmedPassword('');
+      const { user } = await auth.createUserWithEmailAndPassword(values.email, values.password);
+      await createUserProfileDocument(user, values.displayName);
+      setValues({
+        displayName: '',
+        email: '',
+        password: '',
+        confirmedPassword: ''
+      });
     } catch (error) {
       console.error('error creating a user with an email and a password', error.message);
     }
+  };
+
+  const handleEvent = event => {
+    const { name, value } = event.target;
+
+    setValues({ ...values, [name]: value });
   };
 
   return (
@@ -37,40 +47,32 @@ const Register = () => {
         <FormInput
           type="text"
           name="displayName"
-          value={displayName}
-          onChange={event => {
-            setDisplayName(event.target.value);
-          }}
+          value={values.displayName}
+          onChange={handleEvent}
           label="Display Name"
           required
         />
         <FormInput
           type="email"
           name="email"
-          value={email}
-          onChange={event => {
-            setEmail(event.target.value);
-          }}
+          value={values.email}
+          onChange={handleEvent}
           label="Email"
           required
         />
         <FormInput
           type="password"
           name="password"
-          value={password}
-          onChange={event => {
-            setPassword(event.target.value);
-          }}
+          value={values.password}
+          onChange={handleEvent}
           label="Password"
           required
         />
         <FormInput
           type="password"
           name="confirmedPassword"
-          value={confirmedPassword}
-          onChange={event => {
-            setConfirmedPassword(event.target.value);
-          }}
+          value={values.confirmedPassword}
+          onChange={handleEvent}
           label="Confirmed Password"
           required
         />
