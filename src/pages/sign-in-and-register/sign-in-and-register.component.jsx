@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from '../../components/login/login.component';
+import Login from '../../components/sign-in/sign-in.component';
 import Register from '../../components/register/register.component';
 
-import './sign-in-and-sign-up.style.css';
+import './sign-in-and-register.style.css';
 
-const SignInAndSignUpPage = () => {
+const SignInAndRegisterPage = () => {
   return (
     <div className="sign-in-and-register">
       <Login />
@@ -13,4 +13,4 @@ const SignInAndSignUpPage = () => {
   );
 };
 
-export default SignInAndSignUpPage;
+export default SignInAndRegisterPage;

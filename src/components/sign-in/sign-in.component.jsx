@@ -3,9 +3,9 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
-import './login.style.css';
+import './sign-in.style.css';
 
-const Login = () => {
+const SignIn = () => {
   const [values, setValues] = useState({
     email: '',
     password: ''
@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className="sign-in">
       <h2 className="title">I already have an account</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -53,9 +53,9 @@ const Login = () => {
           required
         />
         <div className="buttons">
-          <CustomButton type="submit">Login</CustomButton>
+          <CustomButton type="submit">Sign in</CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
-            Login with Google
+            Sign in with Google
           </CustomButton>
         </div>
       </form>
@@ -63,4 +63,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;
