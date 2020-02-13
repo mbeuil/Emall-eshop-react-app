@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
+import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 
 import './header.style.css';
 
@@ -13,6 +14,9 @@ const signOutEvent = () => {
 
 const Header = () => {
   const currentUser = useSelector(state => state.user.currentUser);
+  const hidden = useSelector(state => state.cart.hidden);
+
+  console.log('cart is hidden', hidden);
 
   return (
     <div className="header">
@@ -43,6 +47,7 @@ const Header = () => {
         )}
         <CartIcon />
       </div>
+      {hidden ? null : <CartDropDown />}
     </div>
   );
 };

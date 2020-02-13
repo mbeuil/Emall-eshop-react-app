@@ -1,0 +1,40 @@
+.cart-dropdown {
+  position: absolute;
+  width: 240px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: white;
+  top: 100px;
+  right: 60px;
+  z-index: 5;
+
+  box-shadow: 0 4px 16px rgba(20, 23, 28, 0.25);
+}
+
+.cart-dropdown:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 11px solid transparent;
+  border-bottom-color: white;
+  border-top: 0;
+  margin-left: -11px;
+  margin-top: -11px;
+}
+
+.cart-dropdown .cart-items {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.cart-dropdown button {
+  margin-top: auto;
+}
