@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { ReactComponent as ShoppingIcon } from '../../assets/cart.svg';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { ReactComponent as ShoppingIcon } from '../../assets/cart.svg';
 
 import './cart-icon.style.css';
 

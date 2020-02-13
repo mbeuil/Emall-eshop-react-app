@@ -21,6 +21,8 @@
   border-radius: 3px;
   cursor: pointer;
   outline: none;
+  display: flex;
+  justify-content: center;
 }
 
 .custom-button:hover {
@@ -38,4 +40,14 @@
   background-color: var(--light-red);
   color: var(--dark-red);
   border: none;
+}
+
+.custom-button.inverted {
+  background-color: white;
+  color: var(--main-color);
+}
+
+.custom-button.inverted:hover {
+  background-color: var(--main-color);
+  color: white;
 }
