@@ -3,7 +3,6 @@ import React from 'react';
 import './cart-item.style.css';
 
 const CartItem = ({ item: { imageUrl, name, price, quantity } }) => {
-  console.log(imageUrl, name, price, quantity);
   const string1 = ' x $';
 
   return (

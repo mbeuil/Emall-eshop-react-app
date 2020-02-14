@@ -8,8 +8,6 @@ import './cart-dropdown.style.css';
 const CartDropDown = () => {
   const cartItems = useSelector(state => state.cart.cartItems);
 
-  console.log('cart', cartItems);
-
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
