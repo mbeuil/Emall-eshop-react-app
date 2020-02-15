@@ -18,8 +18,8 @@
   display: block;
   width: 100%;
   border: none;
-  border-radius: 3px;
-  border: 1px solid var(--sub-color);
+
+  border-bottom: 1px solid var(--sub-color);
   margin: 25px 0;
 }
 

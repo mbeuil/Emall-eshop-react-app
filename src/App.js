@@ -46,7 +46,7 @@ const App = () => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [dispatch]);
 
   const handleRedirection = () => {
     return currentUser ? <Redirect to="/" /> : <SignInAndRegisterPage />;
