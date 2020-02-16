@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import CustomButton from '../custom-button/custom-button.component';
@@ -21,4 +21,4 @@ const CartDropDown = () => {
   );
 };
 
-export default CartDropDown;
+export default memo(CartDropDown);
