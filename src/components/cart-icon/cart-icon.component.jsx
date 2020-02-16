@@ -1,4 +1,4 @@
-import React, { useCallback, memo } from 'react';
+import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
@@ -9,7 +9,7 @@ import './cart-icon.style.css';
 const CartIcon = () => {
   const cartItemsCount = useSelector(selectCartItemsCount);
   const dispatch = useDispatch();
-  const toggleCartState = useCallback(() => dispatch(toggleCartHidden()), [dispatch]);
+  const toggleCartState = () => dispatch(toggleCartHidden());
 
   return (
     <div
