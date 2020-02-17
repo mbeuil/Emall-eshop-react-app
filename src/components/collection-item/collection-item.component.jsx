@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { addItem } from '../../redux/cart/cart.actions';
 import CustomButton from '../custom-button/custom-button.component';
 
