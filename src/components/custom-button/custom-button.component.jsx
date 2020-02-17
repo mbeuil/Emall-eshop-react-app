@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './custom-button.style.css';
 
@@ -17,4 +17,4 @@ const CustomButton = ({ children, isGoogleSignIn, inverted, ...otherProps }) => 
   );
 };
 
-export default CustomButton;
+export default memo(CustomButton);

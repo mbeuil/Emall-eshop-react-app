@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -85,4 +85,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default memo(Register);

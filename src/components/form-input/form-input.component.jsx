@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import './form-input.style.css';
 
@@ -15,4 +15,4 @@ const FormInput = ({ handleChange, label, ...otherProps }) => {
   );
 };
 
-export default FormInput;
+export default memo(FormInput);

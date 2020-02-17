@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, memo } from 'react';
 
 import MenuItem from '../menu-item/menu-item.component';
 
@@ -59,4 +59,4 @@ class Directory extends Component {
   }
 }
 
-export default Directory;
+export default memo(Directory);
