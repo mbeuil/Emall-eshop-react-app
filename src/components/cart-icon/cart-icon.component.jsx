@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import ClickableIcon from '../clickable-icon/clickable-icon.component';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { ReactComponent as ShoppingIcon } from '../../assets/cart.svg';
@@ -13,16 +14,10 @@ const CartIcon = () => {
   const toggleCartState = () => dispatch(toggleCartHidden());
 
   return (
-    <div
-      className="cart-icon"
-      onClick={toggleCartState}
-      onKeyDown={toggleCartState}
-      role="button"
-      tabIndex={0}
-    >
+    <ClickableIcon className="cart-icon" handleClick={toggleCartState}>
       <ShoppingIcon className="shopping-icon" />
       <span className="item-count">{cartItemsCount}</span>
-    </div>
+    </ClickableIcon>
   );
 };
 

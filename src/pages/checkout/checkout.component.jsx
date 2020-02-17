@@ -11,9 +11,6 @@ const CheckoutPage = () => {
   const cartTotal = useSelector(selectCartTotal);
   const total = `TOTAL $${cartTotal}`;
 
-  console.log('cartitems', cartItems);
-  console.log('carttotal', cartTotal);
-
   return (
     <div className="checkout-page">
       <div className="checkout-header">
