@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import ClickableIcon from '../clickable-icon/clickable-icon.component';
@@ -36,4 +36,4 @@ const CheckoutItem = ({ cartItem }) => {
   );
 };
 
-export default CheckoutItem;
+export default memo(CheckoutItem);
