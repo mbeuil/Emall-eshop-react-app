@@ -43,4 +43,12 @@
 .checkout-item .remove-button {
   padding-left: 12px;
   cursor: pointer;
+  outline: none;
+}
+
+.checkout-item .bin {
+  display: flex;
+  width: 25px;
+  height: 25px;
+  background-color: white;
 }

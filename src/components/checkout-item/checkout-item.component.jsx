@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import ClickableIcon from '../clickable-icon/clickable-icon.component';
 import { delFromCart, addItem, removeItem } from '../../redux/cart/cart.actions';
+import { ReactComponent as Bin } from '../../assets/bin.svg';
 
 import './checkout-item.style.css';
 
@@ -30,7 +31,7 @@ const CheckoutItem = ({ cartItem }) => {
       </span>
       <span className="price">{price}</span>
       <ClickableIcon className="remove-button" handleClick={deleteItemFromCart}>
-        &#10005;
+        <Bin className="bin" />
       </ClickableIcon>
     </div>
   );
