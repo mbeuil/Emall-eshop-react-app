@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+import ClickableIcon from '../clickable-icon/clickable-icon.component';
+
 import './menu-item.style.css';
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
@@ -9,13 +11,7 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   };
 
   return (
-    <div
-      className={`${size} menu-item`}
-      onClick={menuToShopPage}
-      onKeyDown={menuToShopPage}
-      role="button"
-      tabIndex={0}
-    >
+    <ClickableIcon className={`${size} menu-item`} handleClick={menuToShopPage}>
       <div
         className="background-image"
         style={{
@@ -26,7 +22,7 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
         <h1 className="title">{title.toUpperCase()}</h1>
         <span className="subtitle">SHOP NOW</span>
       </div>
-    </div>
+    </ClickableIcon>
   );
 };
 export default withRouter(MenuItem);
