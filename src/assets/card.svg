@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="414px" height="414px" viewBox="0 0 414 414" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>card</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1641.000000, -136.000000)" stroke="#FFFFFF">
+            <path d="M1656.17746,251.853833 L1656.17746,435.992344 C1656.06486,445.808304 1658.89451,453.564241 1664.66641,459.260156 C1670.4383,464.956071 1678.90965,467.804029 1690.08045,467.804029 L2008.95937,467.804029 C2018.26114,467.804029 2025.71922,464.956071 2031.33359,459.260156 C2036.94797,453.564241 2039.68178,445.808304 2039.53502,435.992344 L2039.53502,251.853833 C2040.50167,246.384526 2037.76787,239.266581 2031.33359,230.5 C2024.89932,221.733419 2017.44125,217.350128 2008.95937,217.350128 L1690.08045,217.350128 C1681.71423,217.350128 1674.62638,220.2092 1668.8169,225.927344 C1663.00742,231.645488 1658.79428,240.287651 1656.17746,251.853833 Z" id="Path-10" stroke-width="20"></path>
+            <rect id="Rectangle" stroke-width="13" fill="#FFFFFF" x="1941.5" y="372.5" width="46" height="44" rx="15"></rect>
+            <line x1="1718" y1="395" x2="1826.39021" y2="395" id="Path-13-Copy" stroke-width="20" stroke-linecap="round"></line>
+            <line x1="1656" y1="286" x2="2039.54694" y2="286" id="Path-12" stroke-width="20"></line>
+        </g>
+    </g>
+</svg>

@@ -51,3 +51,14 @@
   background-color: var(--main-color);
   color: white;
 }
+
+.custom-button .icon {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+}
+
+.custom-button:hover .icon {
+  filter: invert(1);
+}
