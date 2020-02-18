@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
-import SHOP_DATA from './shop.data';
+import React from 'react';
+import { useSelector } from 'react-redux';
+
 import CollectionPreview from '../../components/collection-preview/collection-preview.component';
+import { selectShopCollections } from '../../redux/shop/shop.selectors';
 
-class ShopPage extends Component {
-  constructor(props) {
-    super(props);
+import './shop.style.css';
 
-    this.state = {
-      collections: SHOP_DATA
-    };
-  }
+const ShopPage = () => {
+  const collections = useSelector(selectShopCollections);
 
-  render() {
-    const { collections } = this.state;
-    return (
-      <div className="shop-page">
-        {collections.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPreview key={id} {...otherCollectionProps} />
-        ))}
-      </div>
-    );
-  }
-}
+  return (
+    <div className="shop-page">
+      {collections.map(({ id, ...otherCollectionProps }) => (
+        <CollectionPreview key={id} {...otherCollectionProps} />
+      ))}
+    </div>
+  );
+};
 
 export default ShopPage;
