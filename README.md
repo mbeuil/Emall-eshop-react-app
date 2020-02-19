@@ -55,4 +55,5 @@ git push heroku master
 - [ ] stripe API.
 - [ ] Firebase auth error.
 - [ ] Firestore DB.
+- [ ] responsive.
 - [ ] test.
