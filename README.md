@@ -12,20 +12,20 @@ Tableof contents
 
 [RoadMap](https://github.com/mbeuil/Emall-eshop-react-app/master/README.md#roadmap)
 
-### Intro
+## Intro
 
 Emall is an e-commerce web app built as a portfolio project.
 
-### Tech Stack
+## Tech Stack
 
 React Redux Firebase
 Prettier + ESLint + Airbnb Style Guide
 
-### Installation
+## Installation
 
 `npm install (Install all dependencies)`
 
-To deploy on Heroku:
+##### To deploy on Heroku:
 
 Create a free Heroku account then install the Heroku CLI on macOS
 `brew tap heroku/brew && brew install heroku`
@@ -45,7 +45,7 @@ More informations about the buildpack [there](https://github.com/mars/create-rea
 git push heroku master
 ```
 
-### RoadMap
+## RoadMap
 
 Core App, homepage + shop pages + checkout page.
 Auth with firebase.
