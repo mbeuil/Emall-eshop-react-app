@@ -2,7 +2,7 @@
 
 # Emall web app
 
-Tableof contents
+Table of contents
 
 [Intro](https://github.com/mbeuil/Emall-eshop-react-app/master/README.md#intro)
 
@@ -18,8 +18,8 @@ Emall is an e-commerce web app built as a portfolio project.
 
 ## Tech Stack
 
-React Redux Firebase
-Prettier + ESLint + Airbnb Style Guide
+- React Redux Firebase
+- Prettier + ESLint + Airbnb Style Guide
 
 ## Installation
 
@@ -47,12 +47,12 @@ git push heroku master
 
 ## RoadMap
 
-Core App, homepage + shop pages + checkout page.
-Auth with firebase.
-Redux state.
-style-component.
-typescript.
-stripe API.
-Firebase auth error.
-Firestore DB.
-test.
+- [x] Core App, homepage + shop pages + checkout page.
+- [x] Auth with firebase.
+- [x] Redux state.
+- [ ] style-component.
+- [ ] typescript.
+- [ ] stripe API.
+- [ ] Firebase auth error.
+- [ ] Firestore DB.
+- [ ] test.
