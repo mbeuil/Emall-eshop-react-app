@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import Login from '../../components/sign-in/sign-in.component';
 import Register from '../../components/register/register.component';

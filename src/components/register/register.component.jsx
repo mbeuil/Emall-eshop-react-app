@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, memo } from 'react';
 
 import FormInput from '../form-input/form-input.component';
@@ -11,31 +13,37 @@ const Register = () => {
     displayName: '',
     email: '',
     password: '',
-    confirmedPassword: ''
+    confirmedPassword: '',
   });
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     if (values.password !== values.confirmedPassword) {
       alert("passwords don't match");
       return;
     }
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(values.email, values.password);
+      const { user } = await auth.createUserWithEmailAndPassword(
+        values.email,
+        values.password,
+      );
       const { displayName } = values;
       await createUserProfileDocument(user, { displayName });
       setValues({
         displayName: '',
         email: '',
         password: '',
-        confirmedPassword: ''
+        confirmedPassword: '',
       });
     } catch (error) {
-      console.error('error creating a user with an email and a password', error.message);
+      console.error(
+        'error creating a user with an email and a password',
+        error.message,
+      );
     }
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
     setValues({ ...values, [name]: value });

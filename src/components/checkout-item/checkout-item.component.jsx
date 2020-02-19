@@ -1,8 +1,14 @@
+/** @format */
+
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import ClickableIcon from '../clickable-icon/clickable-icon.component';
-import { delFromCart, addItem, removeItem } from '../../redux/cart/cart.actions';
+import {
+  delFromCart,
+  addItem,
+  removeItem,
+} from '../../redux/cart/cart.actions';
 import { ReactComponent as Bin } from '../../assets/bin.svg';
 
 import './checkout-item.style.css';

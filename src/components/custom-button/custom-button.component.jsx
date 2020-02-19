@@ -1,10 +1,18 @@
+/** @format */
+
 import React, { memo } from 'react';
 
 import { ReactComponent as CreditCard } from '../../assets/card.svg';
 
 import './custom-button.style.css';
 
-const CustomButton = ({ children, isGoogleSignIn, inverted, stripe, ...otherProps }) => {
+const CustomButton = ({
+  children,
+  isGoogleSignIn,
+  inverted,
+  stripe,
+  ...otherProps
+}) => {
   return (
     <button
       className={`

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -24,12 +26,12 @@ import './App.css';
  * @param: callback function
  */
 
-const onAuthStateChange = callback => {
-  return auth.onAuthStateChanged(async userAuth => {
+const onAuthStateChange = (callback) => {
+  return auth.onAuthStateChanged(async (userAuth) => {
     if (userAuth) {
       const userRef = await createUserProfileDocument(userAuth);
 
-      userRef.onSnapshot(snapShot => {
+      userRef.onSnapshot((snapShot) => {
         callback({ id: snapShot.id, ...snapShot.data() });
       });
     } else {
@@ -39,11 +41,13 @@ const onAuthStateChange = callback => {
 };
 
 const App = () => {
-  const currentUser = useSelector(state => state.user.currentUser);
+  const currentUser = useSelector((state) => state.user.currentUser);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChange(user => dispatch(setCurrentUser(user)));
+    const unsubscribe = onAuthStateChange((user) =>
+      dispatch(setCurrentUser(user)),
+    );
     return () => {
       unsubscribe();
     };

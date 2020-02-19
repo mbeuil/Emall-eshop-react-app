@@ -1,3 +1,5 @@
+/** @format */
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
@@ -10,7 +12,7 @@ const config = {
   storageBucket: 'emall-db.appspot.com',
   messagingSenderId: '166910299301',
   appId: '1:166910299301:web:a3ad1a92d27bce8cab514c',
-  measurementId: 'G-YR69PEHKMD'
+  measurementId: 'G-YR69PEHKMD',
 };
 
 firebase.initializeApp(config);
@@ -44,7 +46,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
         displayName,
         email,
         createAt,
-        ...additionalData
+        ...additionalData,
       });
     } catch (error) {
       console.error('error creating user', error.message);

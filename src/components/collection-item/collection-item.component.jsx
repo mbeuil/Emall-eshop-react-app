@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 

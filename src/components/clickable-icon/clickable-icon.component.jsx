@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { memo } from 'react';
 
 import './clickable-icon.style.css';

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState, memo } from 'react';
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
@@ -8,24 +10,27 @@ import './sign-in.style.css';
 const SignIn = () => {
   const [values, setValues] = useState({
     email: '',
-    password: ''
+    password: '',
   });
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       await auth.signInWithEmailAndPassword(values.email, values.password);
       setValues({
         email: '',
-        password: ''
+        password: '',
       });
     } catch (error) {
-      console.error('error while login with an email and a password', error.message);
+      console.error(
+        'error while login with an email and a password',
+        error.message,
+      );
     }
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     const { name, value } = event.target;
 
     setValues({ ...values, [name]: value });

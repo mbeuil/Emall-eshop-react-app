@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -9,8 +11,10 @@ import CartItem from '../cart-item/cart-item.component';
 
 import './cart-dropdown.style.css';
 
-const cartDropdownItems = cartItems => {
-  return cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem} />);
+const cartDropdownItems = (cartItems) => {
+  return cartItems.map((cartItem) => (
+    <CartItem key={cartItem.id} item={cartItem} />
+  ));
 };
 
 const CartDropDown = ({ history }) => {

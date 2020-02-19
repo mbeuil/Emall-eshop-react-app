@@ -1,3 +1,5 @@
+/** @format */
+
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
@@ -8,7 +10,7 @@ import './stripe-button.style.css';
 const StripeCheckoutButton = ({ price }) => {
   const priceInCents = price * 100;
   const publichableKey = 'pk_test_kJb6XZC6KcYSyntORbBDyX8Q00DObS3HUR';
-  const onToken = token => {
+  const onToken = (token) => {
     console.log(token);
     alert('Payment Successful');
   };
