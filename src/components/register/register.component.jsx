@@ -6,7 +6,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
-import './register.style.css';
+import * as S from './register.styles';
 
 const Register = () => {
   const [values, setValues] = useState({
@@ -50,8 +50,8 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
-      <h2 className="title">I do not have an account</h2>
+    <S.RegisterContainer>
+      <S.TitleContainer>I do not have an account</S.TitleContainer>
       <span>Sign up with your email and password</span>
       <form className="register-form" onSubmit={handleSubmit}>
         <FormInput
@@ -88,8 +88,7 @@ const Register = () => {
         />
         <CustomButton type="submit">Register</CustomButton>
       </form>
-      <div />
-    </div>
+    </S.RegisterContainer>
   );
 };
 

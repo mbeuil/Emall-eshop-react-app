@@ -5,7 +5,7 @@ import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
-import './sign-in.style.css';
+import * as S from './sign-in.styles';
 
 const SignIn = () => {
   const [values, setValues] = useState({
@@ -37,8 +37,8 @@ const SignIn = () => {
   };
 
   return (
-    <div className="sign-in">
-      <h2 className="title">I already have an account</h2>
+    <S.SignInContainer>
+      <S.TitleContainer>I already have an account</S.TitleContainer>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
@@ -57,14 +57,14 @@ const SignIn = () => {
           label="password"
           required
         />
-        <div className="buttons">
+        <S.SignInButtonContainer>
           <CustomButton type="submit">Sign in</CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
             Sign in with Google
           </CustomButton>
-        </div>
+        </S.SignInButtonContainer>
       </form>
-    </div>
+    </S.SignInContainer>
   );
 };
 

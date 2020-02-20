@@ -7,6 +7,10 @@ import { ReactComponent as Logo } from '../../assets/logo.svg';
 const OptionContainerTyles = css`
   padding: 10px 15px;
   cursor: pointer;
+
+  &:hover {
+    color: #ee605f;
+  }
 `;
 
 export const HeaderContainer = styled.div`

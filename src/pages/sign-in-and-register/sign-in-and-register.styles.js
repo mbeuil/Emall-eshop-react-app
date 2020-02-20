@@ -1,8 +1,9 @@
 /** @format */
+import styled from 'styled-components';
 
-.sign-in-and-register {
+export const SignInAndRegisterContainer = styled.div`
   width: 850px;
   display: flex;
   justify-content: space-between;
   margin: 30px auto;
-}
+`;

@@ -2,8 +2,6 @@
 
 import React, { memo } from 'react';
 
-import './clickable-icon.style.css';
-
 const IconButton = ({ className, handleClick, children }) => {
   return (
     <div

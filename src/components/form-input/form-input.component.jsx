@@ -2,7 +2,7 @@
 
 import React, { memo } from 'react';
 
-import * as S from './form-imput.styles';
+import * as S from './form-input.styles';
 
 const FormInput = ({ handleChange, label, ...otherProps }) => {
   return (

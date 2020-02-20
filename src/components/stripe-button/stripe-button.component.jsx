@@ -5,8 +5,6 @@ import StripeCheckout from 'react-stripe-checkout';
 
 import CustomButton from '../custom-button/custom-button.component';
 
-import './stripe-button.style.css';
-
 const StripeCheckoutButton = ({ price }) => {
   const priceInCents = price * 100;
   const publichableKey = 'pk_test_kJb6XZC6KcYSyntORbBDyX8Q00DObS3HUR';
@@ -28,7 +26,7 @@ const StripeCheckoutButton = ({ price }) => {
       token={onToken}
       stripeKey={publichableKey}
     >
-      <CustomButton stripe>pay now</CustomButton>
+      <CustomButton>pay now</CustomButton>
     </StripeCheckout>
   );
 };

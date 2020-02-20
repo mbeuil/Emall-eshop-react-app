@@ -3,9 +3,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import ClickableIcon from '../clickable-icon/clickable-icon.component';
-
-import './menu-item.style.css';
+import * as S from './menu-item.styles';
 
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   const menuToShopPage = () => {
@@ -13,18 +11,17 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   };
 
   return (
-    <ClickableIcon className={`${size} menu-item`} handleClick={menuToShopPage}>
-      <div
-        className="background-image"
+    <S.MenuItemContainer size={size} handleClick={menuToShopPage}>
+      <S.BackgroundImageContainer
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       />
-      <div className="content">
-        <h1 className="title">{title.toUpperCase()}</h1>
-        <span className="subtitle">SHOP NOW</span>
-      </div>
-    </ClickableIcon>
+      <S.ContentContainer>
+        <S.TitleContainer>{title.toUpperCase()}</S.TitleContainer>
+        <S.SubtitleContainer>SHOP NOW</S.SubtitleContainer>
+      </S.ContentContainer>
+    </S.MenuItemContainer>
   );
 };
 export default withRouter(MenuItem);

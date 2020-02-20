@@ -1,17 +1,18 @@
 /** @format */
 
 import React from 'react';
+
 import Login from '../../components/sign-in/sign-in.component';
 import Register from '../../components/register/register.component';
 
-import './sign-in-and-register.style.css';
+import * as S from './sign-in-and-register.styles';
 
 const SignInAndRegisterPage = () => {
   return (
-    <div className="sign-in-and-register">
+    <S.SignInAndRegisterContainer>
       <Login />
       <Register />
-    </div>
+    </S.SignInAndRegisterContainer>
   );
 };
 

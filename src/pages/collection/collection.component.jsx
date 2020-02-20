@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import CollectionItem from '../../components/collection-item/collection-item.component';
 import { selectShopCollection } from '../../redux/shop/shop.selectors';
 
-import './collection.style.css';
+import * as S from './collection.styles';
 
 const CollectionPage = ({ match }) => {
   const { title, items } = useSelector(
@@ -14,14 +14,14 @@ const CollectionPage = ({ match }) => {
   );
 
   return (
-    <div className="collection-page">
-      <h2 className="title">{title}</h2>
-      <div className="items">
+    <S.CollectionPageContainer>
+      <S.CollectionTitle>{title}</S.CollectionTitle>
+      <S.CollectionItems>
         {items.map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </S.CollectionItems>
+    </S.CollectionPageContainer>
   );
 };
 
