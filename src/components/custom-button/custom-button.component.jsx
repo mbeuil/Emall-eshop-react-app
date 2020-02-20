@@ -2,30 +2,13 @@
 
 import React, { memo } from 'react';
 
-import { ReactComponent as CreditCard } from '../../assets/card.svg';
+import * as S from './custom-button.styles';
 
-import './custom-button.style.css';
-
-const CustomButton = ({
-  children,
-  isGoogleSignIn,
-  inverted,
-  stripe,
-  ...otherProps
-}) => {
+const CustomButton = ({ children, stripe, ...otherProps }) => {
   return (
-    <button
-      className={`
-        ${inverted ? 'inverted' : ''}
-        ${isGoogleSignIn ? 'google-sign-in' : ''}
-        ${inverted ? 'btn btn-primary' : ''}
-        custom-button
-        `}
-      {...otherProps}
-    >
+    <S.CustomButtonContainer {...otherProps}>
       {children.toUpperCase()}
-      {stripe ? <CreditCard className="icon" /> : ''}
-    </button>
+    </S.CustomButtonContainer>
   );
 };
 

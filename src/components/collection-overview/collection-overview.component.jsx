@@ -6,17 +6,17 @@ import { useSelector } from 'react-redux';
 import CollectionPreview from '../collection-preview/collection-preview.component';
 import { selectShopCollectionsForPreview } from '../../redux/shop/shop.selectors';
 
-import './collection-overview.style.css';
+import * as S from './collection-overview.styles';
 
 const CollectionOverview = () => {
   const collections = useSelector(selectShopCollectionsForPreview);
 
   return (
-    <div className="collection-overview">
+    <S.CollectionsOverviewContainer>
       {collections.map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview key={id} {...otherCollectionProps} />
       ))}
-    </div>
+    </S.CollectionsOverviewContainer>
   );
 };
 

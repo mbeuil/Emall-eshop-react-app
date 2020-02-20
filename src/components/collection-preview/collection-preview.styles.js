@@ -1,18 +1,19 @@
 /** @format */
+import styled from 'styled-components';
 
-.collection-preview {
+export const CollectionPreviewContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
-}
+`;
 
-.collection-preview .title {
+export const CollectionTitle = styled.h1`
   font-size: 28px;
   margin-bottom: 25px;
-}
+`;
 
-.collection-preview .preview {
+export const CollectionItems = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
-}
+`;

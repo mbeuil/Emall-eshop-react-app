@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 
 import './clickable-icon.style.css';
 
-const ClickableIcon = ({ className, handleClick, children }) => {
+const IconButton = ({ className, handleClick, children }) => {
   return (
     <div
       className={className}
@@ -18,4 +18,4 @@ const ClickableIcon = ({ className, handleClick, children }) => {
   );
 };
 
-export default memo(ClickableIcon);
+export default memo(IconButton);

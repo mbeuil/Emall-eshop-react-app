@@ -2,16 +2,14 @@
 
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 
-import './header.style.css';
+import * as S from './header.styles';
 
 const signOutEvent = () => {
   auth.signOut();
@@ -22,36 +20,29 @@ const Header = () => {
   const hidden = useSelector(selectCartHidden);
 
   return (
-    <div className="header">
-      <Link className="logo-container" to="/">
-        <Logo className="logo" />
-      </Link>
-      <div className="options">
-        <Link className="option" to="/shop">
-          SHOP
-        </Link>
-        <Link className="option" to="/shop">
-          CONTACT
-        </Link>
+    <S.HeaderContainer>
+      <S.LogoContainer to="/">
+        <S.LogoStyle />
+      </S.LogoContainer>
+      <S.OptionContainer>
+        <S.OptionLink to="/shop">SHOP</S.OptionLink>
+        <S.OptionLink to="/shop">CONTACT</S.OptionLink>
         {currentUser ? (
-          <div
-            className="option"
+          <S.OptionDiv
             onClick={signOutEvent}
             onKeyDown={signOutEvent}
             role="button"
             tabIndex={0}
           >
             SIGN OUT
-          </div>
+          </S.OptionDiv>
         ) : (
-          <Link className="option" to="/signin">
-            SIGN IN
-          </Link>
+          <S.OptionLink to="/signin">SIGN IN</S.OptionLink>
         )}
         <CartIcon />
-      </div>
+      </S.OptionContainer>
       {hidden ? null : <CartDropDown />}
-    </div>
+    </S.HeaderContainer>
   );
 };
 

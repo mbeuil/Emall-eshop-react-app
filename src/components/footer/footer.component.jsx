@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import './footer.style.css';
+import * as S from './footer.styles';
 
 const string1 = `© 2020 `;
 const string2 = 'Maxime Beuil';
@@ -10,20 +10,20 @@ const string3 = '. All rights reserved.';
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <pre className="signing">
+    <S.FooterContainer>
+      <S.Signature>
         {string1}
-        <a
+        <S.GithubLink
           className="github-link "
           rel="noopener noreferrer"
           href="https://github.com/mbeuil"
           target="_blank"
         >
           {string2}
-        </a>
+        </S.GithubLink>
         {string3}
-      </pre>
-    </div>
+      </S.Signature>
+    </S.FooterContainer>
   );
 };
 

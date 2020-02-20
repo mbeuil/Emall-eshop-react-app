@@ -1,24 +1,26 @@
 /** @format */
 
-.footer {
+import styled from 'styled-components';
+
+export const FooterContainer = styled.div`
   width: 100%;
   height: 50px;
   display: flex;
-}
+`;
 
-.signing {
+export const Signature = styled.pre`
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Open Sans Condensed';
-}
+`;
 
-.github-link {
+export const GithubLink = styled.a`
   text-decoration: underline;
-}
 
-.github-link:hover {
-  color: #ee605f;
-}
+  &:hover {
+    color: #ee605f;
+  }
+`;

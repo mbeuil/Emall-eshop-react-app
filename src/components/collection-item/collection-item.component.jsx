@@ -4,9 +4,8 @@ import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
-import CustomButton from '../custom-button/custom-button.component';
 
-import './collection-item.style.css';
+import * as S from './collection-item.styles';
 
 const CollectionItem = ({ item }) => {
   const { name, price, imageUrl } = item;
@@ -17,16 +16,16 @@ const CollectionItem = ({ item }) => {
   };
 
   return (
-    <div className="collection-item">
-      <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
-      <div className="collection-footer">
-        <span className="name">{name}</span>
-        <span className="price">{price}</span>
-      </div>
-      <CustomButton onClick={handleClick} inverted>
+    <S.CollectionItemContainer>
+      <S.BackgroundImage style={{ backgroundImage: `url(${imageUrl})` }} />
+      <S.ItemFooterContainer>
+        <S.ItemName>{name}</S.ItemName>
+        <S.ItemPrice>{price}</S.ItemPrice>
+      </S.ItemFooterContainer>
+      <S.AddToCartButton onClick={handleClick} inverted>
         Add to cart
-      </CustomButton>
-    </div>
+      </S.AddToCartButton>
+    </S.CollectionItemContainer>
   );
 };
 

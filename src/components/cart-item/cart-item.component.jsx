@@ -2,23 +2,23 @@
 
 import React, { memo } from 'react';
 
-import './cart-item.style.css';
+import * as S from './cart-item.styles';
 
 const CartItem = ({ item: { imageUrl, name, price, quantity } }) => {
   const string1 = ' x $';
 
   return (
-    <div className="cart-item">
+    <S.CartItemContainer>
       <img src={imageUrl} alt="item" />
-      <div className="item-details">
-        <span className="name">{name}</span>
-        <span className="price">
+      <S.ItemDetails>
+        <span>{name}</span>
+        <span>
           {quantity}
           {string1}
           {price}
         </span>
-      </div>
-    </div>
+      </S.ItemDetails>
+    </S.CartItemContainer>
   );
 };
 

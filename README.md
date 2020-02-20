@@ -18,7 +18,7 @@ Emall is an e-commerce web app built as a portfolio project.
 
 ## Tech Stack
 
-- React Redux Firebase
+- React React-Router Redux Firebase
 - Prettier + ESLint + Airbnb Style Guide
 
 ## Installation
