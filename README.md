@@ -50,7 +50,7 @@ git push heroku master
 - [x] Core App, homepage + shop pages + checkout page.
 - [x] Auth with firebase.
 - [x] Redux state.
-- [ ] style-component.
+- [x] style-component.
 - [ ] typescript.
 - [ ] stripe API.
 - [ ] Firebase auth error.
