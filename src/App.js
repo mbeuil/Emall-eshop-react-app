@@ -35,9 +35,8 @@ const onAuthStateChange = (callback) => {
       userRef.onSnapshot((snapShot) => {
         callback({ id: snapShot.id, ...snapShot.data() });
       });
-    } else {
-      callback(userAuth);
     }
+    callback(userAuth);
   });
 };
 
