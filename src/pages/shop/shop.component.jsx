@@ -26,7 +26,6 @@ const ShopPage = ({ match }) => {
   useEffect(() => {
     collectionRef.onSnapshot(async (snapshot) => {
       const collectionMap = convertCollectionSnapshotToMap(snapshot);
-      console.log('collection', collectionMap);
 
       dispatch(updateCollections(collectionMap));
       setLoading(false);
