@@ -11,12 +11,12 @@ interface CartItemProps {
   quantity: number;
 }
 
-const CartItem = ({
+const CartItem: React.FC<CartItemProps> = ({
   imageUrl,
   name,
   price,
   quantity,
-}: CartItemProps): JSX.Element => {
+}) => {
   const string1 = ' x $';
 
   return (
