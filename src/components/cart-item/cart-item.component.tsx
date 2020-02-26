@@ -4,7 +4,19 @@ import React, { memo } from 'react';
 
 import * as S from './cart-item.styles';
 
-const CartItem = ({ item: { imageUrl, name, price, quantity } }) => {
+interface CartItemProps {
+  imageUrl: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+const CartItem = ({
+  imageUrl,
+  name,
+  price,
+  quantity,
+}: CartItemProps): JSX.Element => {
   const string1 = ' x $';
 
   return (

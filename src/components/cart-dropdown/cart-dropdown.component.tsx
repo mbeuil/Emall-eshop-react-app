@@ -10,7 +10,7 @@ import CartItem from '../cart-item/cart-item.component';
 
 import * as S from './cart-dropdown.styles';
 
-const cartDropdownItems = (cartItems) => {
+const cartDropdownItems = (cartItems): JSX.Element => {
   return cartItems.map((cartItem) => (
     <CartItem key={cartItem.id} item={cartItem} />
   ));
