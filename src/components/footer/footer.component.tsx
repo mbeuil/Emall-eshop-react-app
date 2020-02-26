@@ -4,11 +4,11 @@ import React from 'react';
 
 import * as S from './footer.styles';
 
-const string1 = `© 2020 `;
-const string2 = 'Maxime Beuil';
-const string3 = '. All rights reserved.';
+const string1: string = `© 2020 `;
+const string2: string = 'Maxime Beuil';
+const string3: string = '. All rights reserved.';
 
-const Footer = () => {
+const Footer: React.FC<void> = (): JSX.Element => {
   return (
     <S.FooterContainer>
       <S.Signature>
