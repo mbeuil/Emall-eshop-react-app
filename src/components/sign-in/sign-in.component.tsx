@@ -7,13 +7,15 @@ import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import * as S from './sign-in.styles';
 
-const SignIn = () => {
+const SignIn: React.FC<void> = () => {
   const [values, setValues] = useState({
     email: '',
     password: '',
   });
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault();
 
     try {
@@ -30,7 +32,7 @@ const SignIn = () => {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = event.target;
 
     setValues({ ...values, [name]: value });

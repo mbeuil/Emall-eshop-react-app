@@ -8,7 +8,7 @@ const string1: string = `© 2020 `;
 const string2: string = 'Maxime Beuil';
 const string3: string = '. All rights reserved.';
 
-const Footer: React.FC<void> = (): JSX.Element => {
+const Footer: React.FC<void> = () => {
   return (
     <S.FooterContainer>
       <S.Signature>

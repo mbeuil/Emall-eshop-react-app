@@ -4,6 +4,12 @@ import React, { memo } from 'react';
 
 import * as S from './form-input.styles';
 
+interface FormInputProps {
+  handleChange: function;
+  label: string;
+  otherProps: object;
+}
+
 const FormInput = ({ handleChange, label, ...otherProps }) => {
   return (
     <S.GroupContainer>

@@ -6,7 +6,7 @@ import * as S from './custom-button.styles';
 
 interface CustomButtonProps {
   children: string;
-  otherProps: object;
+  [x: string]: any;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
