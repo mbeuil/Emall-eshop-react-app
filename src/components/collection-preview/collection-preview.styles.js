@@ -28,11 +28,11 @@ export const TitleContainer = styled.span`
   background-color: white;
   padding-right: 10px;
   outline: none;
-  color: grey;
+  color: black;
   cursor: pointer;
 
   &:hover {
-    color: black;
+    color: grey;
   }
 `;
 
