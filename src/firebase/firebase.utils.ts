@@ -4,6 +4,20 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 
+interface collectionItemProps {
+  id: number;
+  name: string;
+  price: number;
+  imageUrl: string;
+}
+
+interface collectionItemsProps {
+  id: string;
+  items: collectionItemProps[];
+  title: string;
+  routeName: string;
+}
+
 const config = {
   apiKey: 'AIzaSyCNTkpU6A0UZWEHjVilGCPIPZJj391kF0o',
   authDomain: 'emall-db.firebaseapp.com',
@@ -59,19 +73,23 @@ export const createUserProfileDocument = async (
   return userRef;
 };
 
-export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
-  const collectionRef = firestore.collection(collectionKey);
+// export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
+//   const collectionRef = firestore.collection(collectionKey);
 
-  const batch = firestore.batch();
-  objectsToAdd.forEach((obj) => {
-    const newDocRef = collectionRef.doc();
-    batch.set(newDocRef, obj);
-  });
+//   const batch = firestore.batch();
+//   objectsToAdd.forEach((obj) => {
+//     const newDocRef = collectionRef.doc();
+//     batch.set(newDocRef, obj);
+//   });
 
-  return batch.commit();
-};
+//   return batch.commit();
+// };
 
-export const convertCollectionSnapshotToMap = (collections) => {
+export const convertCollectionSnapshotToMap = (
+  collections: firebase.firestore.QuerySnapshot<
+    firebase.firestore.DocumentData
+  >,
+) => {
   const transformedCollection = collections.docs.map((doc) => {
     const { title, items } = doc.data();
     return {
@@ -81,10 +99,13 @@ export const convertCollectionSnapshotToMap = (collections) => {
       items,
     };
   });
-  return transformedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.title.toLowerCase()] = collection;
-    return accumulator;
-  }, {});
+  return transformedCollection.reduce(
+    (accumulator: { [index: string]: collectionItemsProps }, collection) => {
+      accumulator[collection.title.toLowerCase()] = collection;
+      return accumulator;
+    },
+    {},
+  );
 };
 
 const provider = new firebase.auth.GoogleAuthProvider();
