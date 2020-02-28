@@ -2,6 +2,11 @@
 
 import styled, { css } from 'styled-components';
 
+interface customButtonProps {
+  isGoogleSignIn?: boolean;
+  isInverted?: boolean;
+}
+
 const buttonStyles = css`
   background-color: black;
   color: white;
@@ -37,11 +42,11 @@ const GoogleSignInStyles = css`
   }
 `;
 
-const getButtonStyles = (props) => {
+const getButtonStyles = (props: customButtonProps) => {
   if (props.isGoogleSignIn) {
     return GoogleSignInStyles;
   }
-  return props.inverted ? invertedButtonStyles : buttonStyles;
+  return props.isInverted ? invertedButtonStyles : buttonStyles;
 };
 
 export const CustomButtonContainer = styled.button`

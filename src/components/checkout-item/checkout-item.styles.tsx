@@ -1,7 +1,6 @@
 /** @format */
 
 import styled from 'styled-components';
-import IconButton from '../icon-button/icon-button.component';
 import { ReactComponent as Bin } from '../../assets/bin.svg';
 
 export const CheckoutItemContainer = styled.div`
@@ -38,12 +37,12 @@ export const QuantityContainer = styled.div`
   }
 `;
 
-export const ArrowIconButton = styled(IconButton)`
+export const ArrowIconButton = styled.div`
   cursor: pointer;
   outline: none;
 `;
 
-export const RemoveIconButton = styled(IconButton)`
+export const RemoveIconButton = styled.div`
   padding-left: 12px;
   cursor: pointer;
   outline: none;

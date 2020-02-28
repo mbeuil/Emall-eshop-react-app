@@ -8,7 +8,7 @@ import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 import * as S from './register.styles';
 
-const Register = () => {
+const Register: React.FC = () => {
   const [values, setValues] = useState({
     displayName: '',
     email: '',
@@ -16,7 +16,9 @@ const Register = () => {
     confirmedPassword: '',
   });
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     event.preventDefault();
     if (values.password !== values.confirmedPassword) {
       alert("passwords don't match");
@@ -43,7 +45,7 @@ const Register = () => {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
     setValues({ ...values, [name]: value });
@@ -58,7 +60,7 @@ const Register = () => {
           type="text"
           name="displayName"
           value={values.displayName}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Display Name"
           required
         />
@@ -66,7 +68,7 @@ const Register = () => {
           type="email"
           name="email"
           value={values.email}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Email"
           required
         />
@@ -74,7 +76,7 @@ const Register = () => {
           type="password"
           name="password"
           value={values.password}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Password"
           required
         />
@@ -82,7 +84,7 @@ const Register = () => {
           type="password"
           name="confirmedPassword"
           value={values.confirmedPassword}
-          onChange={handleChange}
+          handleChange={handleChange}
           label="Confirmed Password"
           required
         />

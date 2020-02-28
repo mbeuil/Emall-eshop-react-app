@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import LoadingSpinner from '../../components/loading-spinner/loading-spinner.component';
+import WithLoading from '../../components/with-loading/with-loading.component';
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 import CollectionPage from '../collection/collection.component';
 import { updateCollections } from '../../redux/shop/shop.actions';
@@ -14,8 +14,8 @@ import {
   convertCollectionSnapshotToMap,
 } from '../../firebase/firebase.utils';
 
-const CollectionOverviewLoading = LoadingSpinner(CollectionOverview);
-const CollectionPageLoading = LoadingSpinner(CollectionPage);
+const CollectionOverviewLoading = WithLoading(CollectionOverview);
+const CollectionPageLoading = WithLoading(CollectionPage);
 
 const ShopPage = ({ match }) => {
   const [loading, setLoading] = useState(true);

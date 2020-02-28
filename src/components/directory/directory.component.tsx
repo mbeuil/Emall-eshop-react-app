@@ -8,8 +8,16 @@ import { selecDirectorySections } from '../../redux/directory/directory.selector
 
 import * as S from './directory.styles';
 
-const Directory = () => {
-  const sections = useSelector(selecDirectorySections);
+interface sectionProps {
+  title: string;
+  imageUrl: string;
+  id: number;
+  linkUrl: string;
+  size?: string;
+}
+
+const Directory: React.FC = () => {
+  const sections: sectionProps[] = useSelector(selecDirectorySections);
 
   return (
     <S.DirectoryMenuContainer>

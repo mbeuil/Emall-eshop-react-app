@@ -5,6 +5,7 @@ import React, { memo } from 'react';
 import * as S from './cart-item.styles';
 
 interface CartItemProps {
+  id: number;
   imageUrl: string;
   name: string;
   price: number;

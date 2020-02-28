@@ -2,15 +2,15 @@
 
 import React from 'react';
 
-import Login from '../../components/sign-in/sign-in.component';
+import SignIn from '../../components/sign-in/sign-in.component';
 import Register from '../../components/register/register.component';
 
 import * as S from './sign-in-and-register.styles';
 
-const SignInAndRegisterPage = () => {
+const SignInAndRegisterPage: React.FC = () => {
   return (
     <S.SignInAndRegisterContainer>
-      <Login />
+      <SignIn />
       <Register />
     </S.SignInAndRegisterContainer>
   );

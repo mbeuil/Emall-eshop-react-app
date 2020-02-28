@@ -4,13 +4,17 @@ import React, { memo } from 'react';
 
 import * as S from './form-input.styles';
 
-interface FormInputProps {
-  handleChange: function;
+interface formInputProps {
+  handleChange: any;
   label: string;
-  otherProps: object;
+  [x: string]: any;
 }
 
-const FormInput = ({ handleChange, label, ...otherProps }) => {
+const FormInput: React.FC<formInputProps> = ({
+  handleChange,
+  label,
+  ...otherProps
+}) => {
   return (
     <S.GroupContainer>
       <S.FormInputContainer onChange={handleChange} {...otherProps} />

@@ -1,10 +1,9 @@
 /** @format */
 
 import styled from 'styled-components';
-import IconButton from '../icon-button/icon-button.component';
 import { ReactComponent as Cart } from '../../assets/cart.svg';
 
-export const CartIconButton = styled(IconButton)`
+export const CartIconButton = styled.div`
   width: 45px;
   height: 45px;
   position: relative;

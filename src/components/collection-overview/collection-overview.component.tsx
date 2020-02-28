@@ -8,8 +8,24 @@ import { selectShopCollectionsForPreview } from '../../redux/shop/shop.selectors
 
 import * as S from './collection-overview.styles';
 
-const CollectionOverview = () => {
-  const collections = useSelector(selectShopCollectionsForPreview);
+interface collectionItemProps {
+  id: number;
+  name: string;
+  price: number;
+  imageUrl: string;
+}
+
+interface collectionItemsProps {
+  id: string;
+  items: collectionItemProps[];
+  title: string;
+  routeName: string;
+}
+
+const CollectionOverview: React.FC = () => {
+  const collections: collectionItemsProps[] = useSelector(
+    selectShopCollectionsForPreview,
+  );
 
   return (
     <S.CollectionsOverviewContainer>

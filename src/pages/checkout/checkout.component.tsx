@@ -12,9 +12,17 @@ import StripeCheckoutButton from '../../components/stripe-button/stripe-button.c
 
 import * as S from './checkout.styles';
 
-const CheckoutPage = () => {
-  const cartItems = useSelector(selectCartItems);
-  const cartTotal = useSelector(selectCartTotal);
+interface cartItemProps {
+  id: number;
+  imageUrl: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+const CheckoutPage: React.FC = () => {
+  const cartItems: cartItemProps[] = useSelector(selectCartItems);
+  const cartTotal: number = useSelector(selectCartTotal);
   const total = `TOTAL $${cartTotal}`;
 
   return (
@@ -37,7 +45,7 @@ const CheckoutPage = () => {
         </S.HeaderBlock>
       </S.CheckoutHeaderContainer>
       {cartItems.map((cartItem) => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+        <CheckoutItem key={cartItem.id} {...cartItem} />
       ))}
       <S.CartTotal>{total}</S.CartTotal>
       <S.ButtonContainer>

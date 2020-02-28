@@ -7,7 +7,7 @@ import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import * as S from './sign-in.styles';
 
-const SignIn: React.FC<void> = () => {
+const SignIn: React.FC = () => {
   const [values, setValues] = useState({
     email: '',
     password: '',

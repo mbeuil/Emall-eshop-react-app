@@ -15,7 +15,7 @@ const signOutEvent = () => {
   auth.signOut();
 };
 
-const Header = () => {
+const Header: React.FC = () => {
   const currentUser = useSelector(selectCurrentUser);
   const hidden = useSelector(selectCartHidden);
 

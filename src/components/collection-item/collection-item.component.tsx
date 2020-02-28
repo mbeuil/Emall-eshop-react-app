@@ -7,12 +7,19 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 import * as S from './collection-item.styles';
 
-const CollectionItem = ({ item }) => {
-  const { name, price, imageUrl } = item;
+interface collectionItemProps {
+  id: number;
+  name: string;
+  price: number;
+  imageUrl: string;
+}
+
+const CollectionItem: React.FC<collectionItemProps> = (collectionItem) => {
+  const { name, price, imageUrl } = collectionItem;
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    return dispatch(addItem(item));
+    return dispatch(addItem(collectionItem));
   };
 
   return (
@@ -22,7 +29,7 @@ const CollectionItem = ({ item }) => {
         <S.ItemName>{name}</S.ItemName>
         <S.ItemPrice>{price}</S.ItemPrice>
       </S.ItemFooterContainer>
-      <S.AddToCartButton onClick={handleClick} inverted>
+      <S.AddToCartButton onClick={handleClick} isInverted>
         Add to cart
       </S.AddToCartButton>
     </S.CollectionItemContainer>

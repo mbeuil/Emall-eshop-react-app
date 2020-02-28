@@ -7,7 +7,24 @@ import CollectionItem from '../collection-item/collection-item.component';
 
 import * as S from './collection-preview.styles';
 
-const CollectionPreview = ({ title, items, routeName }) => {
+interface collectionItemProps {
+  id: number;
+  name: string;
+  price: number;
+  imageUrl: string;
+}
+
+interface collectionItemsProps {
+  items: collectionItemProps[];
+  title: string;
+  routeName: string;
+}
+
+const CollectionPreview: React.FC<collectionItemsProps> = ({
+  title,
+  items,
+  routeName,
+}) => {
   const history = useHistory();
   const location = useLocation();
 
@@ -31,7 +48,7 @@ const CollectionPreview = ({ title, items, routeName }) => {
         {items
           .filter((item, index) => index < 4)
           .map((item) => (
-            <CollectionItem key={item.id} item={item} />
+            <CollectionItem key={item.id} {...item} />
           ))}
       </S.CollectionItems>
     </S.CollectionPreviewContainer>

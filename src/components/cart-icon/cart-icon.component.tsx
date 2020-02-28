@@ -14,7 +14,12 @@ const CartIcon = () => {
   const toggleCartState = () => dispatch(toggleCartHidden());
 
   return (
-    <S.CartIconButton handleClick={toggleCartState}>
+    <S.CartIconButton
+      onClick={toggleCartState}
+      onKeyDown={toggleCartState}
+      role="button"
+      tabIndex={0}
+    >
       <S.ShoppingIconContainer />
       <S.ItemCount>{cartItemsCount}</S.ItemCount>
     </S.CartIconButton>

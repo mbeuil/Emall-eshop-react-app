@@ -11,7 +11,15 @@ import {
 
 import * as S from './checkout-item.styles';
 
-const CheckoutItem = ({ cartItem }) => {
+interface CartItemProps {
+  id: number;
+  imageUrl: string;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+const CheckoutItem: React.FC<CartItemProps> = (cartItem) => {
   const { name, imageUrl, price, quantity } = cartItem;
   const dispatch = useDispatch();
   const deleteItemFromCart = () => dispatch(delFromCart(cartItem));
@@ -25,16 +33,31 @@ const CheckoutItem = ({ cartItem }) => {
       </S.ImageContainer>
       <S.TextStyles>{name}</S.TextStyles>
       <S.QuantityContainer>
-        <S.ArrowIconButton handleClick={removeItemFromCart}>
+        <S.ArrowIconButton
+          onClick={removeItemFromCart}
+          onKeyDown={removeItemFromCart}
+          role="button"
+          tabIndex={0}
+        >
           &#10094;
         </S.ArrowIconButton>
         <span>{quantity}</span>
-        <S.ArrowIconButton className="arrow" handleClick={addItemToCart}>
+        <S.ArrowIconButton
+          onClick={addItemToCart}
+          onKeyDown={addItemToCart}
+          role="button"
+          tabIndex={0}
+        >
           &#10095;
         </S.ArrowIconButton>
       </S.QuantityContainer>
       <S.TextStyles>{price}</S.TextStyles>
-      <S.RemoveIconButton handleClick={deleteItemFromCart}>
+      <S.RemoveIconButton
+        onClick={deleteItemFromCart}
+        onKeyDown={deleteItemFromCart}
+        role="button"
+        tabIndex={0}
+      >
         <S.TrashCanContainer />
       </S.RemoveIconButton>
     </S.CheckoutItemContainer>

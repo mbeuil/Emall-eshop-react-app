@@ -1,12 +1,16 @@
 /** @format */
 import styled from 'styled-components';
-import IconButton from '../icon-button/icon-button.component';
 
-const isLarge = ({ size }) => {
+interface MenuItemContainerProps {
+  size?: string;
+  [x: string]: any;
+}
+
+const isLarge = ({ size }: MenuItemContainerProps) => {
   return size ? '380px' : '240px';
 };
 
-export const MenuItemContainer = styled(IconButton)`
+export const MenuItemContainer = styled.div`
   min-width: 30%;
   height: ${isLarge};
   flex: 1 1 auto;
