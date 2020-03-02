@@ -1,7 +1,7 @@
 /** @format */
 
-interface StateUserProps {
-  currentUser: null;
+export interface StateUserProps {
+  currentUser: boolean;
 }
 
 export interface StateCartProps {
@@ -16,12 +16,12 @@ interface SectionProps {
   linkUrl: string;
 }
 
-interface StateSectionsProps {
+export interface StateSectionsProps {
   sections: SectionProps[];
 }
 
-interface StateShopProps {
-  collections: collectionItemsProps;
+export interface StateShopProps {
+  collections: CollectionMapProps;
 }
 
 export interface StateProps {
@@ -38,11 +38,15 @@ export interface CollectionItemProps {
   imageUrl: string;
 }
 
-export interface collectionItemsProps {
+export interface CollectionItemsProps {
   id: string;
   items: CollectionItemProps[];
   title: string;
   routeName: string;
+}
+
+export interface CollectionMapProps {
+  [index: string]: CollectionItemsProps;
 }
 
 export interface CartItemProps {
@@ -51,12 +55,4 @@ export interface CartItemProps {
   name: string;
   price: number;
   quantity: number;
-}
-
-export interface ItemToAddProps {
-  id: number;
-  imageUrl: string;
-  name: string;
-  price: number;
-  quantity?: number;
 }

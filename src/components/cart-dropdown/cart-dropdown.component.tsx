@@ -9,7 +9,6 @@ import { selectCartItems } from '../../redux/cart/cart.selectors';
 import CartItem from '../cart-item/cart-item.component';
 
 import * as S from './cart-dropdown.styles';
-import cartItemComponent from '../cart-item/cart-item.component';
 
 interface cartItemProps {
   id: number;

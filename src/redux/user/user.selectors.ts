@@ -2,7 +2,9 @@
 
 import { createSelector } from 'reselect';
 
-const selectUser = (state) => state.user;
+import * as T from '../../Types';
+
+const selectUser = (state: T.StateProps) => state.user;
 
 export const selectCurrentUser = createSelector(
   [selectUser],

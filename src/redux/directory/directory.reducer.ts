@@ -1,5 +1,8 @@
 /** @format */
 
+import { DirectoryActionProps } from './directory.types';
+import * as T from '../../Types';
+
 const INITIAL_STATE = {
   sections: [
     {
@@ -37,7 +40,10 @@ const INITIAL_STATE = {
   ],
 };
 
-const directoryReducer = (state = INITIAL_STATE, action) => {
+const directoryReducer = (
+  state = INITIAL_STATE,
+  action: DirectoryActionProps,
+): T.StateSectionsProps => {
   switch (action.type) {
     default:
       return state;

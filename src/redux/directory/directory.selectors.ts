@@ -2,7 +2,9 @@
 
 import { createSelector } from 'reselect';
 
-const selectDirectory = (state) => state.directory;
+import * as T from '../../Types';
+
+const selectDirectory = (state: T.StateProps) => state.directory;
 
 export const selecDirectorySections = createSelector(
   [selectDirectory],

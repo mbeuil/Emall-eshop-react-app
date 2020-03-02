@@ -1,7 +1,12 @@
 /** @format */
 
-const ShopActionTypes = {
+import * as T from '../../Types';
+
+export const ShopActionTypes = {
   UPDATE_COLLECTIONS: 'UPDATE_COLLECTIONS',
 };
 
-export default ShopActionTypes;
+export interface ShopActionProps {
+  type: string;
+  payload: T.CollectionMapProps;
+}

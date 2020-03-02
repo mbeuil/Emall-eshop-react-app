@@ -9,6 +9,10 @@ import { selectShopCollection } from '../../redux/shop/shop.selectors';
 
 import * as S from './collection.styles';
 
+interface RouteParams {
+  collectionId: string;
+}
+
 interface collectionItemProps {
   id: number;
   name: string;
@@ -17,7 +21,7 @@ interface collectionItemProps {
 }
 
 const CollectionPage: React.FC = () => {
-  const { collectionId } = useParams();
+  const { collectionId } = useParams<RouteParams>();
   const { title, items } = useSelector(selectShopCollection(collectionId));
 
   return (

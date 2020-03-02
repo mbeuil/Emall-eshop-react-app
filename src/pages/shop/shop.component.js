@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, useParams, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import WithLoading from '../../components/with-loading/with-loading.component';
@@ -18,6 +18,14 @@ const CollectionOverviewLoading = WithLoading(CollectionOverview);
 const CollectionPageLoading = WithLoading(CollectionPage);
 
 const ShopPage = ({ match }) => {
+  const params = useParams();
+
+  const location = useLocation();
+
+  console.log(match);
+  console.log('params', params);
+  console.log(location);
+
   const [loading, setLoading] = useState(true);
 
   const collectionRef = firestore.collection('collections');

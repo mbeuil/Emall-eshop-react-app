@@ -1,8 +1,9 @@
 /** @format */
 
 import { createSelector } from 'reselect';
+import * as T from '../../Types';
 
-const selectShop = (state) => state.shop;
+const selectShop = (state: T.StateProps) => state.shop;
 
 export const selectShopCollections = createSelector(
   [selectShop],
@@ -15,7 +16,9 @@ export const selectShopCollectionsForPreview = createSelector(
     collections ? Object.keys(collections).map((key) => collections[key]) : [],
 );
 
-export const selectShopCollection = (collectionUrlParam) =>
+export const selectShopCollection = (collectionUrlParam: string) =>
   createSelector([selectShopCollections], (collections) =>
-    collections ? collections[collectionUrlParam] : null,
+    collections && collectionUrlParam
+      ? collections[collectionUrlParam]
+      : collections[0],
   );

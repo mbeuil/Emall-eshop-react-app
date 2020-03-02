@@ -30,7 +30,9 @@ const Register: React.FC = () => {
         values.password,
       );
       const { displayName } = values;
-      await createUserProfileDocument(user, { displayName });
+      if (user) {
+        await createUserProfileDocument(user, { displayName });
+      }
       setValues({
         displayName: '',
         email: '',

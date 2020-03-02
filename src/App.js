@@ -28,27 +28,26 @@ import './App.css';
  * @param: callback function
  */
 
-const onAuthStateChange = (callback) => {
-  return auth.onAuthStateChanged(async (userAuth) => {
-    if (userAuth) {
-      const userRef = await createUserProfileDocument(userAuth);
-
-      userRef.onSnapshot((snapShot) => {
-        callback({ id: snapShot.id, ...snapShot.data() });
-      });
-    }
-    callback(userAuth);
-  });
-};
-
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
+  const onAuthStateChange = () => {
+    return auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const { displayName } = user;
+        const userRef = await createUserProfileDocument(user, { displayName });
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({ id: snapShot.id, ...snapShot.data() });
+        });
+      }
+      setCurrentUser(user);
+    });
+  };
+
   useEffect(() => {
-    const unsubscribe = onAuthStateChange((user) =>
-      dispatch(setCurrentUser(user)),
-    );
+    const unsubscribe = onAuthStateChange();
     return () => {
       unsubscribe();
     };
