@@ -1,22 +1,23 @@
 /** @format */
 
-import CartActionTypes from './cart.types.ts';
+import { CartActionTypes, ItemToAddProps } from './cart.types';
+import * as T from '../../Types/types';
 
 export const toggleCartHidden = () => ({
   type: CartActionTypes.TOGGLE_CART_HIDDEN,
 });
 
-export const addItem = (item) => ({
+export const addItem = (item: ItemToAddProps) => ({
   type: CartActionTypes.ADD_ITEM,
-  payload: item,
+  addPayload: item,
 });
 
-export const removeItem = (item) => ({
+export const removeItem = (item: T.CartItemProps) => ({
   type: CartActionTypes.REMOVE_ITEM,
-  payload: item,
+  removePayload: item,
 });
 
-export const delFromCart = (item) => ({
+export const delFromCart = (item: T.CartItemProps) => ({
   type: CartActionTypes.DEL_FROM_CART,
-  payload: item,
+  delPayload: item,
 });

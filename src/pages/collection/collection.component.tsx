@@ -9,7 +9,14 @@ import { selectShopCollection } from '../../redux/shop/shop.selectors';
 
 import * as S from './collection.styles';
 
-const CollectionPage = () => {
+interface collectionItemProps {
+  id: number;
+  name: string;
+  price: number;
+  imageUrl: string;
+}
+
+const CollectionPage: React.FC = () => {
   const { collectionId } = useParams();
   const { title, items } = useSelector(selectShopCollection(collectionId));
 
@@ -17,8 +24,8 @@ const CollectionPage = () => {
     <S.CollectionPageContainer>
       <S.CollectionTitle>{title}</S.CollectionTitle>
       <S.CollectionItems>
-        {items.map((item) => (
-          <CollectionItem key={item.id} item={item} />
+        {items.map((item: collectionItemProps) => (
+          <CollectionItem key={item.id} {...item} />
         ))}
       </S.CollectionItems>
     </S.CollectionPageContainer>

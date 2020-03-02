@@ -2,7 +2,9 @@
 
 import { createSelector } from 'reselect';
 
-const selectCart = (state) => state.cart;
+import * as T from '../../Types/types';
+
+const selectCart = (state: T.StateProps) => state.cart;
 
 export const selectCartItems = createSelector(
   [selectCart],

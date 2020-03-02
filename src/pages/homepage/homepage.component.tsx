@@ -6,7 +6,7 @@ import Directory from '../../components/directory/directory.component';
 
 import * as S from './homepage.styles';
 
-const HomePage = () => {
+const HomePage: React.FC = () => {
   return (
     <S.HomePageContainer>
       <Directory />
