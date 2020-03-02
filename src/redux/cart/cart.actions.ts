@@ -1,7 +1,7 @@
 /** @format */
 
 import { CartActionTypes, ItemToAddProps } from './cart.types';
-import * as T from '../../Types/types';
+import * as T from '../../Types';
 
 export const toggleCartHidden = () => ({
   type: CartActionTypes.TOGGLE_CART_HIDDEN,

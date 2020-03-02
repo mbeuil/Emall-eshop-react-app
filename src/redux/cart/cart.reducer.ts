@@ -2,7 +2,7 @@
 
 import { CartActionProps, CartActionTypes } from './cart.types';
 import { addItemToCart, removeItemToCart } from './cart.utils';
-import * as T from '../../Types/types';
+import * as T from '../../Types';
 
 const INITIAL_STATE = {
   hidden: true,

@@ -1,6 +1,6 @@
 /** @format */
 
-import * as T from '../../Types/types';
+import * as T from '../../Types';
 import { ItemToAddProps } from './cart.types';
 
 export const addItemToCart = (

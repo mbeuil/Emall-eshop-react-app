@@ -1,6 +1,6 @@
 /** @format */
 
-import * as T from '../../Types/types';
+import * as T from '../../Types';
 
 export const CartActionTypes = {
   TOGGLE_CART_HIDDEN: 'TOGGLE_CART_HIDDEN',
@@ -16,31 +16,6 @@ export interface ItemToAddProps {
   price: number;
   quantity?: number;
 }
-
-// interface ToggleHiddenActionProps {
-//   type: string;
-// }
-
-// interface AddItemActionProps {
-//   type: string;
-//   addPayload: ItemToAddProps;
-// }
-
-// interface RemoveItemActionProps {
-//   type: string;
-//   removePayload: ItemToAddProps;
-// }
-
-// interface DeleItemActionProps {
-//   type: string;
-//   delPayload: ItemToAddProps;
-// }
-
-// export type CartActionProps =
-//   | ToggleHiddenActionProps
-//   | AddItemActionProps
-//   | RemoveItemActionProps
-//   | DeleItemActionProps;
 
 export interface CartActionProps {
   type: string;
