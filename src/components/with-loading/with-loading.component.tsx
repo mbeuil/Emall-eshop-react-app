@@ -5,16 +5,16 @@ import React from 'react';
 import * as S from './with-loading.styles';
 
 interface WithLoadingProps {
-  loading: boolean;
+  isLoading: boolean;
 }
 
 const WithLoading = <P extends object>(
   Component: React.ComponentType<P>,
 ): React.FC<P & WithLoadingProps> => ({
-  loading,
+  isLoading,
   ...props
 }: WithLoadingProps) => {
-  return loading ? (
+  return isLoading ? (
     <S.SpinnerOverlay>
       <S.SpinnerContainer />
     </S.SpinnerOverlay>

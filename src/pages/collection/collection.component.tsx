@@ -20,20 +20,24 @@ interface collectionItemProps {
   imageUrl: string;
 }
 
-const CollectionPage: React.FC = () => {
+const CollectionPage: React.FC = (props: any) => {
   const { collectionId } = useParams<RouteParams>();
-  const { title, items } = useSelector(selectShopCollection(collectionId));
+  const collection = useSelector(selectShopCollection(collectionId));
+  if (collection) {
+    const { title, items } = collection;
 
-  return (
-    <S.CollectionPageContainer>
-      <S.CollectionTitle>{title}</S.CollectionTitle>
-      <S.CollectionItems>
-        {items.map((item: collectionItemProps) => (
-          <CollectionItem key={item.id} {...item} />
-        ))}
-      </S.CollectionItems>
-    </S.CollectionPageContainer>
-  );
+    return (
+      <S.CollectionPageContainer>
+        <S.CollectionTitle>{title}</S.CollectionTitle>
+        <S.CollectionItems>
+          {items.map((item: collectionItemProps) => (
+            <CollectionItem key={item.id} {...item} />
+          ))}
+        </S.CollectionItems>
+      </S.CollectionPageContainer>
+    );
+  }
+  return <div>error</div>;
 };
 
 export default CollectionPage;

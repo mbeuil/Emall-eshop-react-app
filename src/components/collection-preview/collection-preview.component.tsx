@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { memo } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import CollectionItem from '../collection-item/collection-item.component';
 
@@ -26,10 +26,10 @@ const CollectionPreview: React.FC<collectionItemsProps> = ({
   routeName,
 }) => {
   const history = useHistory();
-  const location = useLocation();
+  const match = useRouteMatch();
 
   const previewToShopPage = () => {
-    history.push(`${location.pathname}/${routeName}`);
+    history.push(`${match.path}/${routeName}`);
   };
 
   return (
