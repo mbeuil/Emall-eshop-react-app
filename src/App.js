@@ -39,10 +39,11 @@ const App = () => {
         const userRef = await createUserProfileDocument(user, { displayName });
 
         userRef.onSnapshot((snapShot) => {
-          setCurrentUser({ id: snapShot.id, ...snapShot.data() });
+          dispatch(setCurrentUser({ id: snapShot.id, ...snapShot.data() }));
         });
       }
-      setCurrentUser(user);
+
+      dispatch(setCurrentUser(user));
     });
   };
 
