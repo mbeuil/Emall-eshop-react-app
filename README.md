@@ -51,9 +51,9 @@ git push heroku master
 - [x] Auth with firebase.
 - [x] Redux state.
 - [x] style-component.
-- [ ] typescript.
+- [x] typescript.
 - [ ] stripe API.
 - [ ] Firebase auth error.
-- [ ] Firestore DB.
+- [x] Firestore DB.
 - [ ] responsive.
 - [ ] test.
