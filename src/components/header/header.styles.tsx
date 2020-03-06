@@ -46,5 +46,6 @@ export const OptionLink = styled(Link)`
 `;
 
 export const OptionDiv = styled.div`
-  ${OptionContainerTyles}
+  outline: none;
+  ${OptionContainerTyles};
 `;
