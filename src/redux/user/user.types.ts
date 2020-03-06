@@ -6,5 +6,5 @@ export const UserActionTypes = {
 
 export interface UserActionProps {
   type: string;
-  payload: firebase.User;
+  payload: firebase.firestore.DocumentData | undefined;
 }

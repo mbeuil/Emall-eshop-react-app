@@ -1,12 +1,16 @@
 /** @format */
 
 import { UserActionTypes, UserActionProps } from './user.types';
+import * as T from '../../Types';
 
 const INITIAL_STATE = {
-  currentUser: null,
+  currentUser: undefined,
 };
 
-const userReducer = (state = INITIAL_STATE, action: UserActionProps) => {
+const userReducer = (
+  state = INITIAL_STATE,
+  action: UserActionProps,
+): T.StateUserProps => {
   switch (action.type) {
     case UserActionTypes.SET_CURRENT_USER:
       return {

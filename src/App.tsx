@@ -15,8 +15,6 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-import './App.css';
-
 /*
  * onAuthStateChange()
  *
@@ -35,15 +33,16 @@ const App = () => {
   const onAuthStateChange = () => {
     return auth.onAuthStateChanged(async (user) => {
       if (user) {
-        const { displayName } = user;
-        const userRef = await createUserProfileDocument(user, { displayName });
-
-        userRef.onSnapshot((snapShot) => {
-          dispatch(setCurrentUser({ id: snapShot.id, ...snapShot.data() }));
-        });
+        const userRef = await createUserProfileDocument(user);
+        if (userRef) {
+          userRef.onSnapshot((snapShot) => {
+            const userInfos = snapShot.data();
+            dispatch(setCurrentUser(userInfos));
+          });
+        }
+      } else {
+        dispatch(setCurrentUser(undefined));
       }
-
-      dispatch(setCurrentUser(user));
     });
   };
 
@@ -52,7 +51,7 @@ const App = () => {
     return () => {
       unsubscribe();
     };
-  }, [dispatch]);
+  }, []);
 
   const handleRedirection = () => {
     return currentUser ? <Redirect to="/" /> : <SignInAndRegisterPage />;

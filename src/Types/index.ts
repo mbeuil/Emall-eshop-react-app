@@ -16,7 +16,7 @@ export interface StateProps {
  **/
 
 export interface StateUserProps {
-  currentUser: boolean;
+  currentUser: firebase.firestore.DocumentData | undefined;
 }
 
 /**

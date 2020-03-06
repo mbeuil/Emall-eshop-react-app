@@ -31,7 +31,7 @@ const Register: React.FC = () => {
       );
       const { displayName } = values;
       if (user) {
-        await createUserProfileDocument(user, { displayName });
+        await createUserProfileDocument({ ...user, displayName });
       }
       setValues({
         displayName: '',
