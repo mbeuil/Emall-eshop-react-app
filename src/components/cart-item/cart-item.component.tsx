@@ -3,16 +3,9 @@
 import React, { memo } from 'react';
 
 import * as S from './cart-item.styles';
+import * as T from '../../Types';
 
-interface CartItemProps {
-  id: number;
-  imageUrl: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-const CartItem: React.FC<CartItemProps> = ({
+const CartItem: React.FC<T.CartItemProps> = ({
   imageUrl,
   name,
   price,

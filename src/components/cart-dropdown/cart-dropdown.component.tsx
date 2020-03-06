@@ -9,23 +9,16 @@ import { selectCartItems } from '../../redux/cart/cart.selectors';
 import CartItem from '../cart-item/cart-item.component';
 
 import * as S from './cart-dropdown.styles';
+import * as T from '../../Types';
 
-interface cartItemProps {
-  id: number;
-  imageUrl: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-const cartDropdownItems = (cartItems: cartItemProps[]) => {
-  return cartItems.map((cartItem: cartItemProps) => (
+const cartDropdownItems = (cartItems: T.CartItemProps[]) => {
+  return cartItems.map((cartItem: T.CartItemProps) => (
     <CartItem key={cartItem.id} {...cartItem} />
   ));
 };
 
 const CartDropDown: React.FC = () => {
-  const cartItems: cartItemProps[] = useSelector(selectCartItems);
+  const cartItems: T.CartItemProps[] = useSelector(selectCartItems);
   const dispatch = useDispatch();
   const history = useHistory();
 

@@ -1,28 +1,8 @@
 /** @format */
 
-export interface StateUserProps {
-  currentUser: boolean;
-}
-
-export interface StateCartProps {
-  hidden: boolean;
-  cartItems: CartItemProps[];
-}
-
-interface SectionProps {
-  title: string;
-  imageUrl: string;
-  id: number;
-  linkUrl: string;
-}
-
-export interface StateSectionsProps {
-  sections: SectionProps[];
-}
-
-export interface StateShopProps {
-  collections: CollectionMapProps;
-}
+/**
+ * store state's interface
+ **/
 
 export interface StateProps {
   user: StateUserProps;
@@ -31,11 +11,57 @@ export interface StateProps {
   shop: StateShopProps;
 }
 
-export interface CollectionItemProps {
+/**
+ * user state's interface
+ **/
+
+export interface StateUserProps {
+  currentUser: boolean;
+}
+
+/**
+ * cart state's interfaces
+ **/
+
+export interface StateCartProps {
+  hidden: boolean;
+  cartItems: CartItemProps[];
+}
+
+export interface CartItemProps {
   id: number;
+  imageUrl: string;
   name: string;
   price: number;
+  quantity: number;
+}
+
+/**
+ * sections state's interfaces
+ **/
+
+export interface StateSectionsProps {
+  sections: SectionProps[];
+}
+
+export interface SectionProps {
+  title: string;
   imageUrl: string;
+  id: number;
+  linkUrl: string;
+  size?: string;
+}
+
+/**
+ * shop state's interfaces
+ **/
+
+export interface StateShopProps {
+  collections: CollectionMapProps;
+}
+
+export interface CollectionMapProps {
+  [index: string]: CollectionItemsProps;
 }
 
 export interface CollectionItemsProps {
@@ -45,14 +71,9 @@ export interface CollectionItemsProps {
   routeName: string;
 }
 
-export interface CollectionMapProps {
-  [index: string]: CollectionItemsProps;
-}
-
-export interface CartItemProps {
+export interface CollectionItemProps {
   id: number;
-  imageUrl: string;
   name: string;
   price: number;
-  quantity: number;
+  imageUrl: string;
 }

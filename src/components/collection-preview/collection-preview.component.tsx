@@ -6,21 +6,15 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import CollectionItem from '../collection-item/collection-item.component';
 
 import * as S from './collection-preview.styles';
+import * as T from '../../Types';
 
-interface collectionItemProps {
-  id: number;
-  name: string;
-  price: number;
-  imageUrl: string;
-}
-
-interface collectionItemsProps {
-  items: collectionItemProps[];
+interface CollectionPreviewProps {
+  items: T.CollectionItemProps[];
   title: string;
   routeName: string;
 }
 
-const CollectionPreview: React.FC<collectionItemsProps> = ({
+const CollectionPreview: React.FC<CollectionPreviewProps> = ({
   title,
   items,
   routeName,

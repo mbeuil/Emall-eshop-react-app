@@ -11,17 +11,10 @@ import CheckoutItem from '../../components/checkout-item/checkout-item.component
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 import * as S from './checkout.styles';
-
-interface cartItemProps {
-  id: number;
-  imageUrl: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
+import * as T from '../../Types';
 
 const CheckoutPage: React.FC = () => {
-  const cartItems: cartItemProps[] = useSelector(selectCartItems);
+  const cartItems: T.CartItemProps[] = useSelector(selectCartItems);
   const cartTotal: number = useSelector(selectCartTotal);
   const total = `TOTAL $${cartTotal}`;
 

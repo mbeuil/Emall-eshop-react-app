@@ -8,19 +8,13 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 import { selectShopCollection } from '../../redux/shop/shop.selectors';
 
 import * as S from './collection.styles';
+import * as T from '../../Types';
 
 interface RouteParams {
   collectionId: string;
 }
 
-interface collectionItemProps {
-  id: number;
-  name: string;
-  price: number;
-  imageUrl: string;
-}
-
-const CollectionPage: React.FC = (props: any) => {
+const CollectionPage: React.FC = () => {
   const { collectionId } = useParams<RouteParams>();
   const collection = useSelector(selectShopCollection(collectionId));
   if (collection) {
@@ -30,7 +24,7 @@ const CollectionPage: React.FC = (props: any) => {
       <S.CollectionPageContainer>
         <S.CollectionTitle>{title}</S.CollectionTitle>
         <S.CollectionItems>
-          {items.map((item: collectionItemProps) => (
+          {items.map((item: T.CollectionItemProps) => (
             <CollectionItem key={item.id} {...item} />
           ))}
         </S.CollectionItems>

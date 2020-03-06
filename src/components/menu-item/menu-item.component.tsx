@@ -5,14 +5,14 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import * as S from './menu-item.styles';
 
-interface sectionProps {
+interface MenuItemProps {
   title: string;
   imageUrl: string;
   linkUrl: string;
   size?: string;
 }
 
-const MenuItem: React.FC<sectionProps> = ({
+const MenuItem: React.FC<MenuItemProps> = ({
   title,
   imageUrl,
   size,

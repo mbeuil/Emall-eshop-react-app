@@ -34,7 +34,7 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-/*
+/**
  * createUserProfileDocument
  *
  * Check if the user is in the firestore DB. If there is no documents
@@ -44,7 +44,7 @@ export const firestore = firebase.firestore();
  * @param: userAuth, object
  * @param: additionnal data, object
  * @return: userRef, object
- */
+ **/
 
 export const createUserProfileDocument = async (
   user: firebase.User,

@@ -10,16 +10,9 @@ import {
 } from '../../redux/cart/cart.actions';
 
 import * as S from './checkout-item.styles';
+import * as T from '../../Types';
 
-interface CartItemProps {
-  id: number;
-  imageUrl: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
-
-const CheckoutItem: React.FC<CartItemProps> = (cartItem) => {
+const CheckoutItem: React.FC<T.CartItemProps> = (cartItem) => {
   const { name, imageUrl, price, quantity } = cartItem;
   const dispatch = useDispatch();
   const deleteItemFromCart = () => dispatch(delFromCart(cartItem));

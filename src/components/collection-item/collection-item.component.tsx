@@ -6,15 +6,9 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
 
 import * as S from './collection-item.styles';
+import * as T from '../../Types';
 
-interface collectionItemProps {
-  id: number;
-  name: string;
-  price: number;
-  imageUrl: string;
-}
-
-const CollectionItem: React.FC<collectionItemProps> = (collectionItem) => {
+const CollectionItem: React.FC<T.CollectionItemProps> = (collectionItem) => {
   const { name, price, imageUrl } = collectionItem;
   const dispatch = useDispatch();
 

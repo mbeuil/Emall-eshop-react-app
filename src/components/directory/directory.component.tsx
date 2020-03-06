@@ -7,17 +7,10 @@ import MenuItem from '../menu-item/menu-item.component';
 import { selecDirectorySections } from '../../redux/directory/directory.selectors';
 
 import * as S from './directory.styles';
-
-interface sectionProps {
-  title: string;
-  imageUrl: string;
-  id: number;
-  linkUrl: string;
-  size?: string;
-}
+import * as T from '../../Types';
 
 const Directory: React.FC = () => {
-  const sections: sectionProps[] = useSelector(selecDirectorySections);
+  const sections: T.SectionProps[] = useSelector(selecDirectorySections);
 
   return (
     <S.DirectoryMenuContainer>
