@@ -24,7 +24,7 @@ const ShopPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    collectionRef.onSnapshot(async (snapshot) => {
+    collectionRef.get().then((snapshot) => {
       const collectionMap = convertCollectionSnapshotToMap(snapshot);
 
       dispatch(updateCollections(collectionMap));
