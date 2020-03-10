@@ -17,6 +17,7 @@ interface RouteParams {
 const CollectionPage: React.FC = () => {
   const { collectionId } = useParams<RouteParams>();
   const collection = useSelector(selectShopCollection(collectionId));
+
   if (collection) {
     const { title, items } = collection;
 

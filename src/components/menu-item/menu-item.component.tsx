@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import * as S from './menu-item.styles';
 
@@ -19,15 +19,10 @@ const MenuItem: React.FC<MenuItemProps> = ({
   linkUrl,
 }) => {
   const history = useHistory();
-  const location = useLocation();
   const match = useRouteMatch();
 
-  console.log('history', history);
-  console.log('location', location.pathname);
-  console.log('match', match.path);
-
   const menuToShopPage = () => {
-    history.push(`${match.path}/${linkUrl}`);
+    history.push(`${match.path}${linkUrl}`);
   };
 
   return (
