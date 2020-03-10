@@ -58,6 +58,8 @@ export interface SectionProps {
 
 export interface StateShopProps {
   collections: CollectionMapProps;
+  isFetching: boolean;
+  errorMessage: string;
 }
 
 export interface CollectionMapProps {

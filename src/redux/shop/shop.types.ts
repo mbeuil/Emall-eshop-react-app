@@ -3,10 +3,13 @@
 import * as T from '../../Types';
 
 export const ShopActionTypes = {
-  UPDATE_COLLECTIONS: 'UPDATE_COLLECTIONS',
+  FETCH_COLLECTIONS_START: 'FETCH_COLLECTIONS_START',
+  FETCH_COLLECTIONS_SUCCESS: 'FETCH_COLLECTIONS_SUCCESS',
+  FETCH_COLLECTIONS_FAILURE: 'FETCH_COLLECTIONS_FAILURE',
 };
 
 export interface ShopActionProps {
   type: string;
-  payload: T.CollectionMapProps;
+  collectionMapPayload: T.CollectionMapProps;
+  errorMessagePayload: string;
 }

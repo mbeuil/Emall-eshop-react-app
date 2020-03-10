@@ -1,36 +1,27 @@
 /** @format */
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import WithLoading from '../../components/with-loading/with-loading.component';
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 import CollectionPage from '../collection/collection.component';
-import { updateCollections } from '../../redux/shop/shop.actions';
 
-import {
-  firestore,
-  convertCollectionSnapshotToMap,
-} from '../../firebase/firebase.utils';
+import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
+import { selectIsCollectionFetching } from '../../redux/shop/shop.selectors';
 
 const CollectionOverviewLoading = WithLoading(CollectionOverview);
 const CollectionPageLoading = WithLoading(CollectionPage);
 
 const ShopPage = () => {
   const match = useRouteMatch();
-  const [loading, setLoading] = useState(true);
-  const collectionRef = firestore.collection('collections');
   const dispatch = useDispatch();
+  const isFetching: boolean = useSelector(selectIsCollectionFetching);
 
   useEffect(() => {
-    collectionRef.get().then((snapshot) => {
-      const collectionMap = convertCollectionSnapshotToMap(snapshot);
-
-      dispatch(updateCollections(collectionMap));
-      setLoading(false);
-    });
-  });
+    dispatch(fetchCollectionsStartAsync());
+  }, [dispatch]);
 
   return (
     <div className="shop-page">
@@ -38,17 +29,17 @@ const ShopPage = () => {
         exact
         path={`${match.path}`}
         render={(props) => (
-          <CollectionOverviewLoading isLoading={loading} {...props} />
+          <CollectionOverviewLoading isLoading={isFetching} {...props} />
         )}
       />
       <Route
         path={`${match.path}/:collectionId`}
         render={(props) => (
-          <CollectionPageLoading isLoading={loading} {...props} />
+          <CollectionPageLoading isLoading={isFetching} {...props} />
         )}
       />
     </div>
   );
 };
 
-export default ShopPage;
+export default memo(ShopPage);
