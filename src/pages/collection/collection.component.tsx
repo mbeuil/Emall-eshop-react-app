@@ -16,7 +16,9 @@ interface RouteParams {
 
 const CollectionPage: React.FC = () => {
   const { collectionId } = useParams<RouteParams>();
-  const collection = useSelector(selectShopCollection(collectionId));
+  const collection: T.CollectionItemsProps | null = useSelector(
+    selectShopCollection(collectionId),
+  );
 
   if (collection) {
     const { title, items } = collection;
@@ -32,7 +34,7 @@ const CollectionPage: React.FC = () => {
       </S.CollectionPageContainer>
     );
   }
-  return <div>error</div>;
+  return <div />;
 };
 
 export default CollectionPage;
