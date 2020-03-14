@@ -26,7 +26,6 @@ const Header: React.FC = () => {
       </S.LogoContainer>
       <S.OptionContainer>
         <S.OptionLink to="/shop">SHOP</S.OptionLink>
-        <S.OptionLink to="/shop">CONTACT</S.OptionLink>
         {currentUser ? (
           <S.OptionDiv
             onClick={signOutEvent}

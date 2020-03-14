@@ -5,7 +5,7 @@ import { Route, useRouteMatch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
-import CollectionPage from '../collection/collection.component';
+import CollectionPage from '../../components/collection-section/collection-section.component';
 
 import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
 

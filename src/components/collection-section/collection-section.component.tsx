@@ -4,21 +4,21 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import CollectionItem from '../../components/collection-item/collection-item.component';
-import LoadingSpinner from '../../components/loading-spinner/loading-spinner.component';
+import CollectionItem from '../collection-item/collection-item.component';
+import LoadingSpinner from '../loading-spinner/loading-spinner.component';
 import {
   selectShopCollection,
   selectIsCollectionFetching,
 } from '../../redux/shop/shop.selectors';
 
-import * as S from './collection.styles';
+import * as S from './collection-section.styles';
 import * as T from '../../Types';
 
 interface RouteParams {
   collectionId: string;
 }
 
-const CollectionPage: React.FC = () => {
+const CollectionSection: React.FC = () => {
   const { collectionId } = useParams<RouteParams>();
   const isFetching = useSelector(selectIsCollectionFetching);
   const collection: T.CollectionItemsProps | null = useSelector(
@@ -43,4 +43,4 @@ const CollectionPage: React.FC = () => {
   );
 };
 
-export default CollectionPage;
+export default CollectionSection;
