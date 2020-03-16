@@ -7,14 +7,14 @@ import { useDispatch } from 'react-redux';
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 import CollectionPage from '../../components/collection-section/collection-section.component';
 
-import { fetchCollectionsStartAsync } from '../../redux/shop/shop.actions';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
 const ShopPage = () => {
   const match = useRouteMatch();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCollectionsStartAsync());
+    dispatch(fetchCollectionsStart());
   }, [dispatch]);
 
   return (
