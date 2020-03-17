@@ -13,31 +13,30 @@ import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        const userRef = await createUserProfileDocument(user);
-        if (userRef) {
-          userRef.onSnapshot((snapShot) => {
-            const userInfos = snapShot.data();
-            dispatch(setCurrentUser(userInfos));
-          });
-        }
-      } else {
-        dispatch(setCurrentUser(undefined));
-      }
-    });
-    return () => {
-      unsubscribe();
-    };
-  }, [dispatch]);
+  // useEffect(() => {
+  // const unsubscribe = auth.onAuthStateChanged(async (user) => {
+  //   if (user) {
+  //     const userRef = await createUserProfileDocument(user);
+  //     if (userRef) {
+  //       userRef.onSnapshot((snapShot) => {
+  //         const userInfos = snapShot.data();
+  //         dispatch(setCurrentUser(userInfos));
+  //       });
+  //     }
+  //   } else {
+  //     dispatch(setCurrentUser(undefined));
+  //   }
+  // });
+  // return () => {
+  //   unsubscribe();
+  // };
+  // }, [dispatch]);
 
   const handleRedirection = () => {
     return currentUser ? <Redirect to="/" /> : <SignInAndRegisterPage />;

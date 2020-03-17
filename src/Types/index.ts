@@ -17,6 +17,7 @@ export interface StateProps {
 
 export interface StateUserProps {
   currentUser: firebase.firestore.DocumentData | undefined;
+  errorMessage: string;
 }
 
 /**

@@ -5,6 +5,7 @@ import * as T from '../../Types';
 
 const INITIAL_STATE = {
   currentUser: undefined,
+  errorMessage: '',
 };
 
 const userReducer = (
@@ -12,10 +13,16 @@ const userReducer = (
   action: UserActionProps,
 ): T.StateUserProps => {
   switch (action.type) {
-    case UserActionTypes.SET_CURRENT_USER:
+    case UserActionTypes.SIGN_IN_SUCCESS:
       return {
         ...state,
         currentUser: action.payload,
+        errorMessage: '',
+      };
+    case UserActionTypes.SIGN_IN_FAILURE:
+      return {
+        ...state,
+        errorMessage: action.errorMessagePayload,
       };
     default:
       return state;

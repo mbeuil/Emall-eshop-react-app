@@ -1,10 +1,14 @@
 /** @format */
 
 import React, { useState, memo } from 'react';
+import { useDispatch } from 'react-redux';
 
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from '../../redux/user/user.actions';
 
 import * as S from './sign-in.styles';
 
@@ -13,24 +17,15 @@ const SignIn: React.FC = () => {
     email: '',
     password: '',
   });
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
+  const signInWithGoogle = () => {
+    dispatch(googleSignInStart());
+  };
+
+  const signInWithEmail = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    try {
-      await auth.signInWithEmailAndPassword(values.email, values.password);
-      setValues({
-        email: '',
-        password: '',
-      });
-    } catch (error) {
-      console.error(
-        'error while login with an email and a password',
-        error.message,
-      );
-    }
+    dispatch(emailSignInStart(values));
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -43,7 +38,7 @@ const SignIn: React.FC = () => {
     <S.SignInContainer>
       <S.TitleContainer>I already have an account</S.TitleContainer>
       <span>Sign in with your email and password</span>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={signInWithEmail}>
         <FormInput
           name="email"
           type="email"
@@ -62,7 +57,7 @@ const SignIn: React.FC = () => {
         />
         <S.SignInButtonContainer>
           <CustomButton type="submit">Sign in</CustomButton>
-          <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
+          <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>
             Sign in with Google
           </CustomButton>
         </S.SignInButtonContainer>
