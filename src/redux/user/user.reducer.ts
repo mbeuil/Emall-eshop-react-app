@@ -21,6 +21,7 @@ const userReducer = (
       };
     case UserActionTypes.SIGN_IN_FAILURE:
     case UserActionTypes.SIGN_OUT_FAILURE:
+    case UserActionTypes.REGISTER_FAILURE:
       return {
         ...state,
         errorMessage: action.errorMessagePayload,

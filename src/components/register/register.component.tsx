@@ -2,11 +2,14 @@
 
 // node_modules
 import React, { useState, memo } from 'react';
+import { useDispatch } from 'react-redux';
 
 // Components
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+
+// Redux dispatch + selector
+import { registerStart } from '../../redux/user/user.actions';
 
 // Styles + Types + Interfaces
 import * as S from './register.styles';
@@ -18,36 +21,17 @@ const Register: React.FC = () => {
     password: '',
     confirmedPassword: '',
   });
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ): Promise<void> => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (values.password !== values.confirmedPassword) {
+    const { displayName, email, password, confirmedPassword } = values;
+
+    if (password !== confirmedPassword) {
       alert("passwords don't match");
       return;
     }
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        values.email,
-        values.password,
-      );
-      const { displayName } = values;
-      if (user) {
-        await createUserProfileDocument({ ...user, displayName });
-      }
-      setValues({
-        displayName: '',
-        email: '',
-        password: '',
-        confirmedPassword: '',
-      });
-    } catch (error) {
-      console.error(
-        'error creating a user with an email and a password',
-        error.message,
-      );
-    }
+    dispatch(registerStart({ displayName, email, password }));
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -53,3 +53,21 @@ export const signOutFailure = (errorMessage: string) => ({
   type: UserActionTypes.SIGN_OUT_FAILURE,
   errorMessagePayload: errorMessage,
 });
+
+/**
+ * Register actions:
+ */
+
+export const registerStart = (registerInfos: T.RegisterInfos) => ({
+  type: UserActionTypes.REGISTER_START,
+  registerPayload: registerInfos,
+});
+
+export const registerSuccess = () => ({
+  type: UserActionTypes.REGISTER_SUCCESS,
+});
+
+export const registerFailure = (errorMessage: string) => ({
+  type: UserActionTypes.REGISTER_FAILURE,
+  errorMessagePayload: errorMessage,
+});

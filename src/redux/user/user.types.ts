@@ -10,6 +10,9 @@ export const UserActionTypes = {
   SIGN_OUT_START: 'SIGN_OUT_START',
   SIGN_OUT_SUCCESS: 'SIGN_OUT_SUCCESS',
   SIGN_OUT_FAILURE: 'SIGN_OUT_FAILURE',
+  REGISTER_START: 'REGISTER_START',
+  REGISTER_SUCCESS: 'REGISTER_SUCCESS',
+  REGISTER_FAILURE: 'REGISTER_FAILURE',
 };
 
 export interface UserActionProps {
@@ -17,9 +20,16 @@ export interface UserActionProps {
   payload: firebase.firestore.DocumentData | undefined;
   emailAndPasswordPayload: EmailAndPassword;
   errorMessagePayload: string;
+  registerPayload: RegisterInfos;
 }
 
 export interface EmailAndPassword {
+  email: string;
+  password: string;
+}
+
+export interface RegisterInfos {
+  displayName: string;
   email: string;
   password: string;
 }

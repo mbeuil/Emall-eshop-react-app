@@ -10,6 +10,8 @@ import {
   signInFailure,
   signOutSuccess,
   signOutFailure,
+  registerSuccess,
+  registerFailure,
 } from './user.actions';
 
 // Firebase utils
@@ -93,13 +95,33 @@ function* onSignOutStart() {
 }
 
 /**
+ * Register asynchronous event handler
+ */
+
+function* register({
+  registerPayload: { displayName, email, password },
+}: UserActionProps) {
+  try {
+    const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+    yield put(registerSuccess());
+    yield getSnapshotFromUserAuth({ ...user, displayName });
+  } catch (error) {
+    yield put(registerFailure(error.message));
+  }
+}
+
+function* onRegisterStart() {
+  yield takeLatest(UserActionTypes.REGISTER_START, register);
+}
+
+/**
  * User session peristence asynchronous event handler
  */
 
 function* isUserAuthenticated() {
   try {
     const userAuth = yield getCurrentUser();
-    if (!userAuth) return;
+    if (!userAuth) yield;
     else {
       yield getSnapshotFromUserAuth(userAuth);
     }
@@ -123,6 +145,7 @@ function* userSagas() {
     call(onEmailSignInStart),
     call(onCheckUserSession),
     call(onSignOutStart),
+    call(onRegisterStart),
   ]);
 }
 

@@ -25,7 +25,6 @@ const Header: React.FC = () => {
     dispatch(signOutStart());
   };
 
-  console.log('currentUser', currentUser);
   return (
     <S.HeaderContainer>
       <S.LogoContainer to="/">

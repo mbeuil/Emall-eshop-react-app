@@ -1,14 +1,18 @@
 /** @format */
 
 import { ShopActionTypes, ShopActionProps } from './shop.types';
+import * as T from '../../Types';
 
 const INITIAL_STATE = {
-  collections: null,
+  collections: {},
   isFetching: false,
   errorMessage: '',
 };
 
-const shopReducer = (state = INITIAL_STATE, action: ShopActionProps) => {
+const shopReducer = (
+  state = INITIAL_STATE,
+  action: ShopActionProps,
+): T.StateShopProps => {
   switch (action.type) {
     case ShopActionTypes.FETCH_COLLECTIONS_START:
       return {
