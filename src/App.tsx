@@ -14,32 +14,17 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 
-// Styles + Types + Interfaces
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+// Redux dispatch + selector
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { checkUserSession } from './redux/user/user.actions';
 
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  // const unsubscribe = auth.onAuthStateChanged(async (user) => {
-  //   if (user) {
-  //     const userRef = await createUserProfileDocument(user);
-  //     if (userRef) {
-  //       userRef.onSnapshot((snapShot) => {
-  //         const userInfos = snapShot.data();
-  //         dispatch(setCurrentUser(userInfos));
-  //       });
-  //     }
-  //   } else {
-  //     dispatch(setCurrentUser(undefined));
-  //   }
-  // });
-  // return () => {
-  //   unsubscribe();
-  // };
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(checkUserSession());
+  }, [dispatch]);
 
   const handleRedirection = () => {
     return currentUser ? <Redirect to="/" /> : <SignInAndRegisterPage />;

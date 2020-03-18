@@ -3,7 +3,7 @@
 // node_modules
 import React from 'react';
 
-// Local modules
+// Components
 import Directory from '../../components/directory/directory.component';
 
 // Styles + Types + Interfaces

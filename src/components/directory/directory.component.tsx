@@ -4,8 +4,10 @@
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-// Local modules
+// Components
 import MenuItem from '../menu-item/menu-item.component';
+
+// Redux dispatch + selector
 import { selecDirectorySections } from '../../redux/directory/directory.selectors';
 
 // Styles + Types + Interfaces

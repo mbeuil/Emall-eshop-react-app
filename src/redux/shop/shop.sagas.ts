@@ -1,16 +1,20 @@
 /** @format */
 
+// node_modules
 import { takeLatest, call, put } from 'redux-saga/effects';
-import {
-  firestore,
-  convertCollectionSnapshotToMap,
-} from '../../firebase/firebase.utils';
 
+// Reduc actions + types
 import { ShopActionTypes } from './shop.types';
 import {
   fetchCollectionsSuccess,
   fetchCollectionsFailure,
 } from './shop.actions';
+
+// Firebase utils
+import {
+  firestore,
+  convertCollectionSnapshotToMap,
+} from '../../firebase/firebase.utils';
 
 /**
  * fetch collection asynchronous event handler

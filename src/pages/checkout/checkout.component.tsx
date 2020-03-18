@@ -4,13 +4,15 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-// Local modules
+// Components
+import CheckoutItem from '../../components/checkout-item/checkout-item.component';
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
+
+// Redux dispatch + selector
 import {
   selectCartItems,
   selectCartTotal,
 } from '../../redux/cart/cart.selectors';
-import CheckoutItem from '../../components/checkout-item/checkout-item.component';
-import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
 // Styles + Types + Interfaces
 import * as S from './checkout.styles';

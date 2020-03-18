@@ -4,9 +4,11 @@
 import React, { useState, memo } from 'react';
 import { useDispatch } from 'react-redux';
 
-// Local modules
+// Components
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
+
+// Redux dispatch + selector
 import {
   googleSignInStart,
   emailSignInStart,

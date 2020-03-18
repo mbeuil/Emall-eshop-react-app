@@ -4,7 +4,7 @@
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
-// Local modules
+// Redux dispatch + selector
 import {
   delFromCart,
   addItem,

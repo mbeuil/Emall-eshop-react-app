@@ -3,7 +3,7 @@
 // node_modules
 import React from 'react';
 
-// Local modules
+// Components
 import SignIn from '../../components/sign-in/sign-in.component';
 import Register from '../../components/register/register.component';
 

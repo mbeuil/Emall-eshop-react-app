@@ -20,9 +20,15 @@ const userReducer = (
         errorMessage: '',
       };
     case UserActionTypes.SIGN_IN_FAILURE:
+    case UserActionTypes.SIGN_OUT_FAILURE:
       return {
         ...state,
         errorMessage: action.errorMessagePayload,
+      };
+    case UserActionTypes.SIGN_OUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: undefined,
       };
     default:
       return state;

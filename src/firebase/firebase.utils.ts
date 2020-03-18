@@ -36,15 +36,10 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
 /**
- * createUserProfileDocument
- *
+ * createUserProfileDocument():
  * Check if the user is in the firestore DB. If there is no documents
  * creates one.
- * Return the userRef data.
- *
- * @param: userAuth, object
- * @param: additionnal data, object
- * @return: userRef, object
+ * @param: user
  **/
 
 export const createUserProfileDocument = async (user: firebase.User) => {
@@ -82,6 +77,10 @@ export const createUserProfileDocument = async (user: firebase.User) => {
 //   return batch.commit();
 // };
 
+/**
+ *
+ * @param collections
+ */
 export const convertCollectionSnapshotToMap = (
   collections: firebase.firestore.QuerySnapshot<
     firebase.firestore.DocumentData
@@ -105,6 +104,23 @@ export const convertCollectionSnapshotToMap = (
   );
 };
 
+/**
+ * getCurrentUser():
+ * Return a new promise that will resolve to a correct user value if there is one,
+ * if there isn't, resolve us back null.
+ */
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
+/**
+ *
+ */
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
 

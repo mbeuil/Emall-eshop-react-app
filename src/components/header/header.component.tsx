@@ -2,26 +2,30 @@
 
 // node_modules
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
-// Local modules
-import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { auth } from '../../firebase/firebase.utils';
+// Components
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropDown from '../cart-dropdown/cart-dropdown.component';
+
+// Redux dispatch + selector
+import { signOutStart } from '../../redux/user/user.actions';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 // Styles + Types + Interfaces
 import * as S from './header.styles';
 
-const signOutEvent = () => {
-  auth.signOut();
-};
-
 const Header: React.FC = () => {
   const currentUser = useSelector(selectCurrentUser);
   const hidden = useSelector(selectCartHidden);
+  const dispatch = useDispatch();
 
+  const signOutEvent = () => {
+    dispatch(signOutStart());
+  };
+
+  console.log('currentUser', currentUser);
   return (
     <S.HeaderContainer>
       <S.LogoContainer to="/">

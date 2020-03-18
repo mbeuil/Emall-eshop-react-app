@@ -5,11 +5,11 @@ import React, { useEffect, memo } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-// Local modules
+// Components
 import CollectionOverview from '../../components/collection-overview/collection-overview.component';
 import CollectionPage from '../../components/collection-section/collection-section.component';
 
-// Styles + Types + Interfaces
+// Redux dispatch + selector
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
 const ShopPage = () => {

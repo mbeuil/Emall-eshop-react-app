@@ -4,7 +4,7 @@
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-// Local modules
+// Redux dispatch + selector
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 

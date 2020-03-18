@@ -4,9 +4,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-// Local modules
+// Components
 import CollectionPreview from '../collection-preview/collection-preview.component';
 import LoadingSpinner from '../loading-spinner/loading-spinner.component';
+
+// Redux dispatch + selector
 import {
   selectShopCollectionsForPreview,
   selectIsCollectionFetching,

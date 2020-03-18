@@ -4,7 +4,7 @@
 import React, { memo } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
-// Local modules
+// Components
 import CollectionItem from '../collection-item/collection-item.component';
 
 // Styles + Types + Interfaces
