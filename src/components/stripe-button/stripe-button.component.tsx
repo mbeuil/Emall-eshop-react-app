@@ -1,8 +1,10 @@
 /** @format */
 
+// node_modules
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
+// Styles + Types + Interfaces
 import CustomButton from '../custom-button/custom-button.component';
 
 interface StripeCheckoutButtonProps {

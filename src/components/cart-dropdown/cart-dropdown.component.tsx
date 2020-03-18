@@ -1,13 +1,16 @@
 /** @format */
 
+// node_modules
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+// Local modules
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { selectCartItems } from '../../redux/cart/cart.selectors';
 import CartItem from '../cart-item/cart-item.component';
 
+// Styles + Types + Interfaces
 import * as S from './cart-dropdown.styles';
 import * as T from '../../Types';
 

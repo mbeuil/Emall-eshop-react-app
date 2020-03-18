@@ -1,9 +1,11 @@
 /** @format */
 
+// node_modules
 import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+// Local modules
 import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import SignInAndRegisterPage from './pages/sign-in-and-register/sign-in-and-register.component';
@@ -12,6 +14,7 @@ import CheckoutPage from './pages/checkout/checkout.component';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 
+// Styles + Types + Interfaces
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { selectCurrentUser } from './redux/user/user.selectors';
 

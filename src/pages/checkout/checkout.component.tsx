@@ -1,8 +1,10 @@
 /** @format */
 
+// node_modules
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+// Local modules
 import {
   selectCartItems,
   selectCartTotal,
@@ -10,6 +12,7 @@ import {
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
+// Styles + Types + Interfaces
 import * as S from './checkout.styles';
 import * as T from '../../Types';
 

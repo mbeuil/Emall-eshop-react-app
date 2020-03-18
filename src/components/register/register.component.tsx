@@ -1,11 +1,14 @@
 /** @format */
 
+// node_modules
 import React, { useState, memo } from 'react';
 
+// Local modules
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
+// Styles + Types + Interfaces
 import * as S from './register.styles';
 
 const Register: React.FC = () => {

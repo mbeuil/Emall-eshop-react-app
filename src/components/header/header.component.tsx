@@ -1,14 +1,17 @@
 /** @format */
 
+// node_modules
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+// Local modules
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropDown from '../cart-dropdown/cart-dropdown.component';
 
+// Styles + Types + Interfaces
 import * as S from './header.styles';
 
 const signOutEvent = () => {

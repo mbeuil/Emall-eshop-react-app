@@ -1,7 +1,9 @@
 /** @format */
 
+// node_modules
 import React from 'react';
 
+// Styles + Types + Interfaces
 import * as S from './footer.styles';
 
 const string1: string = `© 2020 `;

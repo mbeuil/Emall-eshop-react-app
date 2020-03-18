@@ -1,11 +1,14 @@
 /** @format */
 
+// node_modules
 import React, { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+// Local modules
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 
+// Styles + Types + Interfaces
 import * as S from './cart-icon.styles';
 
 const CartIcon = () => {

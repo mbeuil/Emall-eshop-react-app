@@ -12,7 +12,11 @@ import {
   fetchCollectionsFailure,
 } from './shop.actions';
 
-export function* fetchCollectionsAsync() {
+/**
+ * fetch collection asynchronous event handler
+ */
+
+function* fetchCollectionsAsync() {
   try {
     const collectionRef = firestore.collection('collections');
     const snapshot = yield collectionRef.get();

@@ -1,10 +1,13 @@
 /** @format */
 
+// node_modules
 import React, { memo } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
+// Local modules
 import CollectionItem from '../collection-item/collection-item.component';
 
+// Styles + Types + Interfaces
 import * as S from './collection-preview.styles';
 import * as T from '../../Types';
 

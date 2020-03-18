@@ -1,9 +1,11 @@
 /** @format */
 
+// node_modules
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+// Local modules
 import CollectionItem from '../collection-item/collection-item.component';
 import LoadingSpinner from '../loading-spinner/loading-spinner.component';
 import {
@@ -11,6 +13,7 @@ import {
   selectIsCollectionFetching,
 } from '../../redux/shop/shop.selectors';
 
+// Styles + Types + Interfaces
 import * as S from './collection-section.styles';
 import * as T from '../../Types';
 

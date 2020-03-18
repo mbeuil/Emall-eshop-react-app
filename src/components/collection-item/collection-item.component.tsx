@@ -1,10 +1,13 @@
 /** @format */
 
+// node_modules
 import React, { memo } from 'react';
 import { useDispatch } from 'react-redux';
 
+// Local modules
 import { addItem } from '../../redux/cart/cart.actions';
 
+// Styles + Types + Interfaces
 import * as S from './collection-item.styles';
 import * as T from '../../Types';
 

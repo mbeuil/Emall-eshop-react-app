@@ -1,8 +1,10 @@
 /** @format */
 
+// node_modules
 import React from 'react';
 import { useSelector } from 'react-redux';
 
+// Local modules
 import CollectionPreview from '../collection-preview/collection-preview.component';
 import LoadingSpinner from '../loading-spinner/loading-spinner.component';
 import {
@@ -10,6 +12,7 @@ import {
   selectIsCollectionFetching,
 } from '../../redux/shop/shop.selectors';
 
+// Styles + Types + Interfaces
 import * as S from './collection-overview.styles';
 import * as T from '../../Types';
 

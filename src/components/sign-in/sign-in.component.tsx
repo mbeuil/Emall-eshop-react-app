@@ -1,8 +1,10 @@
 /** @format */
 
+// node_modules
 import React, { useState, memo } from 'react';
 import { useDispatch } from 'react-redux';
 
+// Local modules
 import FormInput from '../form-input/form-input.component';
 import CustomButton from '../custom-button/custom-button.component';
 import {
@@ -10,6 +12,7 @@ import {
   emailSignInStart,
 } from '../../redux/user/user.actions';
 
+// Styles + Types + Interfaces
 import * as S from './sign-in.styles';
 
 const SignIn: React.FC = () => {
