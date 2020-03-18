@@ -117,7 +117,7 @@ function* onCheckUserSession() {
  * Run all of our user's start-sagas at once in one large saga
  */
 
-export function* userSagas() {
+function* userSagas() {
   yield all([
     call(onGoogleSignInStart),
     call(onEmailSignInStart),
@@ -125,3 +125,5 @@ export function* userSagas() {
     call(onSignOutStart),
   ]);
 }
+
+export default userSagas;

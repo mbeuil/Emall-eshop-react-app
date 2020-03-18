@@ -21,3 +21,7 @@ export const delFromCart = (item: T.CartItemProps) => ({
   type: CartActionTypes.DEL_FROM_CART,
   delPayload: item,
 });
+
+export const clearCart = () => ({
+  type: CartActionTypes.CLEAR_CART,
+});

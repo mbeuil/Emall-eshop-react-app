@@ -1,7 +1,7 @@
 /** @format */
 
 // node_modules
-import { takeLatest, call, put } from 'redux-saga/effects';
+import { takeLatest, call, all, put } from 'redux-saga/effects';
 
 // Reduc actions + types
 import { ShopActionTypes } from './shop.types';
@@ -31,9 +31,20 @@ function* fetchCollectionsAsync() {
   }
 }
 
-export function* fetchCollectionsStart() {
+function* fetchCollectionsStart() {
   yield takeLatest(
     ShopActionTypes.FETCH_COLLECTIONS_START,
     fetchCollectionsAsync,
   );
 }
+
+/**
+ * shopSagas():
+ * Run all of our shop's start-sagas at once in one large saga
+ */
+
+function* shopSagas() {
+  yield all([call(fetchCollectionsStart)]);
+}
+
+export default shopSagas;

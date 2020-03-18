@@ -36,6 +36,11 @@ const cartReducer = (
           (cartItem: T.CartItemProps) => cartItem.id !== action.delPayload.id,
         ),
       };
+    case CartActionTypes.CLEAR_CART:
+      return {
+        ...state,
+        cartItems: [],
+      };
     default:
       return state;
   }
