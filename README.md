@@ -18,7 +18,7 @@ Emall is an e-commerce web app built as a portfolio project.
 
 ## Tech Stack
 
-- React React-Router Redux Firebase
+- React Hooks React-Router Redux Redux-Saga Firebase Typescript
 - Prettier + ESLint + Airbnb Style Guide
 
 ## Installation
@@ -53,7 +53,7 @@ git push heroku master
 - [x] style-component.
 - [x] Firestore DB.
 - [x] typescript.
-- [ ] asynchronous redux (thunk/saga)
+- [x] asynchronous redux (thunk/saga)
 - [ ] beter stripe API implementation.
 - [ ] Firebase auth/DB error.
 - [ ] responsive.
