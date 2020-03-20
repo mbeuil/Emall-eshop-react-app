@@ -16,6 +16,10 @@ Table of contents
 
 Emall is an e-commerce web app built as a portfolio project.
 
+URL:
+
+> https://emall-live.herokuapp.com/
+
 ## Tech Stack
 
 - React Hooks React-Router Redux Redux-Saga Firebase Typescript
@@ -28,6 +32,7 @@ Emall is an e-commerce web app built as a portfolio project.
 ##### To deploy on Heroku:
 
 Create a free Heroku account then install the Heroku CLI on macOS
+
 `brew tap heroku/brew && brew install heroku`
 
 More informations about heroku CLI installation [there](https://devcenter.heroku.com/articles/heroku-cli#download-and-install).
