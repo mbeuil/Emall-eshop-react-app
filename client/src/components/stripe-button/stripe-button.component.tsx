@@ -16,6 +16,7 @@ const StripeCheckoutButton: React.FC<StripeCheckoutButtonProps> = ({
 }) => {
   const priceInCents = price * 100;
   const publichableKey = 'pk_test_kJb6XZC6KcYSyntORbBDyX8Q00DObS3HUR';
+
   const onToken = (token: any) => {
     console.log(token);
     alert('Payment Successful');
