@@ -3,6 +3,7 @@
 // node_modules
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 
 // Components
 import CustomButton from '../custom-button/custom-button.component';
@@ -16,9 +17,25 @@ const StripeCheckoutButton: React.FC<StripeCheckoutButtonProps> = ({
 }) => {
   const priceInCents = price * 100;
   const publichableKey = 'pk_test_kJb6XZC6KcYSyntORbBDyX8Q00DObS3HUR';
+
   const onToken = (token: any) => {
-    console.log(token);
-    alert('Payment Successful');
+    axios({
+      url: 'payment',
+      method: 'post',
+      data: {
+        amount: priceInCents,
+        token,
+      },
+    })
+      .then((response) => {
+        alert('Payment successful');
+      })
+      .catch((error) => {
+        console.log('Payment error: ', error);
+        alert(
+          'There was an issue with the payment. Please, be sure you used the provided credit card.',
+        );
+      });
   };
 
   return (
