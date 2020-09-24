@@ -1,6 +1,6 @@
 {
   "name": "emall-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engine": {
     "node": "12.13.1",
     "npm": "6.14.8"
