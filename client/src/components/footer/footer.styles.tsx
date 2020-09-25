@@ -15,6 +15,10 @@ export const Signature = styled.pre`
   align-items: center;
   justify-content: center;
   font-family: 'Open Sans Condensed';
+
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
 `;
 
 export const GithubLink = styled.a`

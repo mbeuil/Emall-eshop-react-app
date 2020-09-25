@@ -7,6 +7,10 @@ body {
   margin: 0;
   font-family: 'Open Sans Condensed';
   padding: 20px 40px;
+
+  @media screen and (max-width: 800px){
+    padding: 10px;
+  }
 }
 
 a {

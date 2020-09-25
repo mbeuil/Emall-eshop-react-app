@@ -1,4 +1,5 @@
 /** @format */
+
 import styled, { css } from 'styled-components';
 
 const isShrink = css`
@@ -9,6 +10,10 @@ const isShrink = css`
 export const GroupContainer = styled.div`
   position: relative;
   margin: 45px 0;
+
+  @media screen and (max-width: 800px) {
+    margin: 25px 0;
+  }
 `;
 
 export const FormInputContainer = styled.input`

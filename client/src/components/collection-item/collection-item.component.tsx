@@ -24,7 +24,7 @@ const CollectionItem: React.FC<T.CollectionItemProps> = (collectionItem) => {
       <S.BackgroundImage style={{ backgroundImage: `url(${imageUrl})` }} />
       <S.ItemFooterContainer>
         <S.ItemName>{name}</S.ItemName>
-        <S.ItemPrice>{price}</S.ItemPrice>
+        <S.ItemPrice>{price}$</S.ItemPrice>
       </S.ItemFooterContainer>
       <S.AddToCartButton onClick={handleClick} isInverted>
         Add to cart
