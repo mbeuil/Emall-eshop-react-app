@@ -59,7 +59,9 @@ git push heroku master
 - [x] Firestore DB.
 - [x] typescript.
 - [x] asynchronous redux (thunk/saga)
-- [ ] beter stripe API implementation.
+- [x] express backend server for better stripe integration.
 - [ ] Firebase auth/DB error.
 - [ ] responsive.
 - [ ] test.
+
+- [ ] Test context API instead Redux.

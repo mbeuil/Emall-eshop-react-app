@@ -59,4 +59,8 @@ export const AddToCartButton = styled(CustomButton)`
   ${CollectionItemContainer}:hover & {
     display: flex;
   }
+
+  @media screen and (max-width: 800px) {
+    display: block;
+  }
 `;
