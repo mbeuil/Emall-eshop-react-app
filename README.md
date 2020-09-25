@@ -61,7 +61,8 @@ git push heroku master
 - [x] asynchronous redux (thunk/saga)
 - [x] express backend server for better stripe integration.
 - [ ] Firebase auth/DB error.
-- [ ] responsive.
+- [x] responsive.
 - [ ] test.
 
 - [ ] Test context API instead Redux.
+- [ ] Test GraphQL.
