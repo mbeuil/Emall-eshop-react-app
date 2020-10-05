@@ -1,16 +1,20 @@
 /** @format */
 
 // node_modules
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo, lazy } from 'react';
 import { Route, useRouteMatch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-// Components
-import CollectionOverview from '../../components/collection-overview/collection-overview.component';
-import CollectionSection from '../../components/collection-section/collection-section.component';
-
 // Redux dispatch + selector
 import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
+
+// Lazy loaded components
+const CollectionOverview = lazy(() =>
+  import('../../components/collection-overview/collection-overview.component'),
+);
+const CollectionSection = lazy(() =>
+  import('../../components/collection-section/collection-section.component'),
+);
 
 const ShopPage = () => {
   const match = useRouteMatch();
