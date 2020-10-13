@@ -1,12 +1,17 @@
 /** @format */
 
+// node_modules
 import React from 'react';
+
+// Styles + Types + Interfaces
+import * as S from './error-fallback.styles';
 
 const ErrorFallback = () => {
   return (
-    <div role="alert">
-      <div>Something went wrong</div>
-    </div>
+    <S.ErrorImageOverlay>
+      <S.ErrorImageContainer imageUrl="https://i.imgur.com/FOeYt4E.png" />
+      <S.ErrorImageText>Sorry, this page is broken</S.ErrorImageText>
+    </S.ErrorImageOverlay>
   );
 };
 
