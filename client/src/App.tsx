@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 import LoadingSpinner from './components/loading-spinner/loading-spinner.component';
-import ErrorFallback from './components/error-fallback/error-fallback.component';
 import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
 // Redux dispatch + selector

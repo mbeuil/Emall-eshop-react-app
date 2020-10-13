@@ -8,23 +8,22 @@ class ErrorBoundary extends React.Component {
     super();
 
     this.state = {
-      HasError: false,
+      hasErrored: false,
     };
   }
 
   static getDerivedStateFromError(error) {
-    return { hasError: true };
+    return { hasErrored: true };
   }
 
   componentDidCatch(error, info) {
     console.log(error);
   }
 
-  return() {
-    if (this.state.hasError) {
-      return <ErrorFallback>;
+  render() {
+    if (this.state.hasErrored) {
+      return <ErrorFallback />;
     }
-
     return this.props.children;
   }
 }
