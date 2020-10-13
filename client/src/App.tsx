@@ -36,7 +36,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <>
       <Header />
       <Switch>
         <ErrorBoundary>
@@ -49,7 +49,7 @@ const App = () => {
         </ErrorBoundary>
       </Switch>
       <Footer />
-    </div>
+    </>
   );
 };
 
