@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 import LoadingSpinner from './components/loading-spinner/loading-spinner.component';
+import ErrorFallback from './components/error-fallback/error-fallback.component';
+import ErrorBoundary from './components/error-boundary/error-boundary.component';
 
 // Redux dispatch + selector
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -38,12 +40,14 @@ const App = () => {
     <div>
       <Header />
       <Switch>
-        <Suspense fallback={<LoadingSpinner />}>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/checkout" component={CheckoutPage} />
-          <Route exact path="/signin" render={handleRedirection} />
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/shop" component={ShopPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
+            <Route exact path="/signin" render={handleRedirection} />
+          </Suspense>
+        </ErrorBoundary>
       </Switch>
       <Footer />
     </div>
