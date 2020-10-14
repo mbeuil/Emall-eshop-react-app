@@ -4,12 +4,13 @@
 import React, { useEffect, lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { ErrorBoundary } from 'react-error-boundary';
 
 // components
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 import LoadingSpinner from './components/loading-spinner/loading-spinner.component';
-import ErrorBoundary from './components/error-boundary/error-boundary.component';
+import ErrorFallback from './components/error-fallback/error-fallback.component';
 
 // Redux dispatch + selector
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -39,7 +40,7 @@ const App = () => {
     <>
       <Header />
       <Switch>
-        <ErrorBoundary>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Suspense fallback={<LoadingSpinner />}>
             <Route exact path="/" component={HomePage} />
             <Route path="/shop" component={ShopPage} />
