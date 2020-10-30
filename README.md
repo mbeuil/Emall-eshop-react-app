@@ -35,7 +35,8 @@ Create a free Heroku account then install the Heroku CLI on macOS
 
 `brew tap heroku/brew && brew install heroku`
 
-More informations about heroku CLI installation [there](https://devcenter.heroku.com/articles/heroku-cli#download-and-install).
+More informations about heroku CLI installation
+[there](https://devcenter.heroku.com/articles/heroku-cli#download-and-install).
 
 Then:
 
@@ -44,7 +45,8 @@ heroku login
 heroku create Emall-live --buildpack https://github.com/mars/create-react-app-buildpack.git
 ```
 
-More informations about the buildpack [there](https://github.com/mars/create-react-app-buildpack). Then:
+More informations about the buildpack
+[there](https://github.com/mars/create-react-app-buildpack). Then:
 
 ```
 git push heroku master
@@ -60,9 +62,7 @@ git push heroku master
 - [x] typescript.
 - [x] asynchronous redux (thunk/saga)
 - [x] express backend server for better stripe integration.
-- [ ] Firebase auth/DB error.
 - [x] responsive.
+- [x] performance.
+- [ ] Firebase auth/DB error.
 - [ ] test.
-
-- [ ] Test context API instead Redux.
-- [ ] Test GraphQL.
