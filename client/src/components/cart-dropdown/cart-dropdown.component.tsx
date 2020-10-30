@@ -16,12 +16,6 @@ import { selectCartItems } from '../../redux/cart/cart.selectors';
 import * as S from './cart-dropdown.styles';
 import * as T from '../../Types';
 
-const cartDropdownItems = (cartItems: T.CartItemProps[]) => {
-  return cartItems.map((cartItem: T.CartItemProps) => (
-    <CartItem key={cartItem.id} {...cartItem} />
-  ));
-};
-
 const CartDropDown: React.FC = () => {
   const cartItems: T.CartItemProps[] = useSelector(selectCartItems);
   const dispatch = useDispatch();
@@ -36,7 +30,9 @@ const CartDropDown: React.FC = () => {
     <S.CartDropdownContainer>
       <S.CartItemsContainer>
         {cartItems.length ? (
-          cartDropdownItems(cartItems)
+          cartItems.map((cartItem) => (
+            <CartItem key={cartItem.id} {...cartItem} />
+          ))
         ) : (
           <S.EmptyMessage>Your cart is empty</S.EmptyMessage>
         )}
